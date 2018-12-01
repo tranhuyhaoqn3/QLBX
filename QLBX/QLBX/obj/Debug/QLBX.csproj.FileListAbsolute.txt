@@ -1,0 +1,10 @@
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\bin\Debug\QLBX.exe.config
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\bin\Debug\QLBX.exe
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\bin\Debug\QLBX.pdb
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.csprojResolveAssemblyReference.cache
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.Main.resources
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.Properties.Resources.resources
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.csproj.GenerateResource.Cache
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.exe
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.pdb
+D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.GUI.Grid.resources
