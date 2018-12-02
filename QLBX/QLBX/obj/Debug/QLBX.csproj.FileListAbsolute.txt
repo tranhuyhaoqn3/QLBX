@@ -8,3 +8,12 @@ D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.csproj.GenerateResour
 D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.exe
 D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.pdb
 D:\AJ\HQTCSDL\Project\QuanLiBenXe\QLBX\QLBX\obj\Debug\QLBX.GUI.Grid.resources
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\bin\Debug\QLBX.exe.config
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.exe
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.pdb
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmDangNhap.resources
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.Main.resources
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.Grid.resources
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.Properties.Resources.resources
+C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.csproj.GenerateResource.Cache

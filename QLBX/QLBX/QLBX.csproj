@@ -33,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +57,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\DangNhapBO.cs" />
+    <Compile Include="DAO\BenXeDi.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\BenXeVe.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\ChuyenXe.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DangNhap.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Ghe.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\HoaDon.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\KhachHang.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\NhaXe.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\PhanCong.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\QuanLyBenXe.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBenXe.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\QuanLyBenXe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\QuanLyBenXe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\sysdiagram.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Xe.cs">
+      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +126,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +140,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DAO\QuanLyBenXe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyBenXe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAO\QuanLyBenXe.edmx.diagram">
+      <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,10 +167,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BUS\" />
-    <Folder Include="DAO\" />
     <Folder Include="DTO\" />
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAO\QuanLyBenXe.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBenXe.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAO\QuanLyBenXe.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBenXe.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

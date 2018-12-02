@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyBenXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BenXeDi">
+    <Key>
+      <PropertyRef Name="IDBenXeDi" />
+    </Key>
+    <Property Name="IDBenXeDi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenBenXe" Type="nvarchar" MaxLength="100" />
+    <Property Name="DiaDiem" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="BenXeVe">
+    <Key>
+      <PropertyRef Name="IDBenXeVe" />
+    </Key>
+    <Property Name="IDBenXeVe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenBenXe" Type="nvarchar" MaxLength="100" />
+    <Property Name="DiaDiem" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ChuyenXe">
+    <Key>
+      <PropertyRef Name="IDChuyen" />
+    </Key>
+    <Property Name="IDChuyen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GiaVe" Type="int" />
+    <Property Name="IDBenXeDi" Type="int" />
+    <Property Name="IDBenXeVe" Type="int" />
+  </EntityType>
+  <EntityType Name="DangNhap">
+    <Key>
+      <PropertyRef Name="TaiKhoan" />
+    </Key>
+    <Property Name="TaiKhoan" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ghe">
+    <Key>
+      <PropertyRef Name="IDGhe" />
+    </Key>
+    <Property Name="IDGhe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ViTri" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="int" Nullable="false" />
+    <Property Name="IDXe" Type="int" />
+    <Property Name="IDHoaDon" Type="int" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="IDHoaDon" />
+    </Key>
+    <Property Name="IDHoaDon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayDat" Type="datetime" />
+    <Property Name="TongTien" Type="int" />
+    <Property Name="IDKhachHang" Type="int" />
+    <Property Name="IDNhanVien" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="IDKhachHang" />
+    </Key>
+    <Property Name="IDKhachHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NhaXe">
+    <Key>
+      <PropertyRef Name="IDNhaXe" />
+    </Key>
+    <Property Name="IDNhaXe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PhanCong">
+    <Key>
+      <PropertyRef Name="IDChuyen" />
+      <PropertyRef Name="IDXe" />
+    </Key>
+    <Property Name="NgayKhoiHanh" Type="datetime" />
+    <Property Name="IDChuyen" Type="int" Nullable="false" />
+    <Property Name="IDXe" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Xe">
+    <Key>
+      <PropertyRef Name="IDXe" />
+    </Key>
+    <Property Name="IDXe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loai" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoGhe" Type="int" />
+    <Property Name="BienSoXe" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDNhaXe" Type="int" />
+  </EntityType>
+  <Association Name="FK_ChuyenXe_BenXeDi">
+    <End Role="BenXeDi" Type="Self.BenXeDi" Multiplicity="0..1" />
+    <End Role="ChuyenXe" Type="Self.ChuyenXe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenXeDi">
+        <PropertyRef Name="IDBenXeDi" />
+      </Principal>
+      <Dependent Role="ChuyenXe">
+        <PropertyRef Name="IDBenXeDi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChuyenXe_BenXeVe">
+    <End Role="BenXeVe" Type="Self.BenXeVe" Multiplicity="0..1" />
+    <End Role="ChuyenXe" Type="Self.ChuyenXe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenXeVe">
+        <PropertyRef Name="IDBenXeVe" />
+      </Principal>
+      <Dependent Role="ChuyenXe">
+        <PropertyRef Name="IDBenXeVe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ghe_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+    <End Role="Ghe" Type="Self.Ghe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="IDHoaDon" />
+      </Principal>
+      <Dependent Role="Ghe">
+        <PropertyRef Name="IDHoaDon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ghe_Xe1">
+    <End Role="Xe" Type="Self.Xe" Multiplicity="0..1" />
+    <End Role="Ghe" Type="Self.Ghe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xe">
+        <PropertyRef Name="IDXe" />
+      </Principal>
+      <Dependent Role="Ghe">
+        <PropertyRef Name="IDXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_KhachHang">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="IDKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanCong_ChuyenXe">
+    <End Role="ChuyenXe" Type="Self.ChuyenXe" Multiplicity="1" />
+    <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuyenXe">
+        <PropertyRef Name="IDChuyen" />
+      </Principal>
+      <Dependent Role="PhanCong">
+        <PropertyRef Name="IDChuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanCong_Xe">
+    <End Role="Xe" Type="Self.Xe" Multiplicity="1" />
+    <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xe">
+        <PropertyRef Name="IDXe" />
+      </Principal>
+      <Dependent Role="PhanCong">
+        <PropertyRef Name="IDXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Xe_NhaXe">
+    <End Role="NhaXe" Type="Self.NhaXe" Multiplicity="0..1" />
+    <End Role="Xe" Type="Self.Xe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaXe">
+        <PropertyRef Name="IDNhaXe" />
+      </Principal>
+      <Dependent Role="Xe">
+        <PropertyRef Name="IDNhaXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLyBenXeModelStoreContainer">
+    <EntitySet Name="BenXeDi" EntityType="Self.BenXeDi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BenXeVe" EntityType="Self.BenXeVe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChuyenXe" EntityType="Self.ChuyenXe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DangNhap" EntityType="Self.DangNhap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ghe" EntityType="Self.Ghe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhaXe" EntityType="Self.NhaXe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanCong" EntityType="Self.PhanCong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Xe" EntityType="Self.Xe" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ChuyenXe_BenXeDi" Association="Self.FK_ChuyenXe_BenXeDi">
+      <End Role="BenXeDi" EntitySet="BenXeDi" />
+      <End Role="ChuyenXe" EntitySet="ChuyenXe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChuyenXe_BenXeVe" Association="Self.FK_ChuyenXe_BenXeVe">
+      <End Role="BenXeVe" EntitySet="BenXeVe" />
+      <End Role="ChuyenXe" EntitySet="ChuyenXe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ghe_HoaDon" Association="Self.FK_Ghe_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="Ghe" EntitySet="Ghe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ghe_Xe1" Association="Self.FK_Ghe_Xe1">
+      <End Role="Xe" EntitySet="Xe" />
+      <End Role="Ghe" EntitySet="Ghe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_KhachHang" Association="Self.FK_HoaDon_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanCong_ChuyenXe" Association="Self.FK_PhanCong_ChuyenXe">
+      <End Role="ChuyenXe" EntitySet="ChuyenXe" />
+      <End Role="PhanCong" EntitySet="PhanCong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanCong_Xe" Association="Self.FK_PhanCong_Xe">
+      <End Role="Xe" EntitySet="Xe" />
+      <End Role="PhanCong" EntitySet="PhanCong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Xe_NhaXe" Association="Self.FK_Xe_NhaXe">
+      <End Role="NhaXe" EntitySet="NhaXe" />
+      <End Role="Xe" EntitySet="Xe" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

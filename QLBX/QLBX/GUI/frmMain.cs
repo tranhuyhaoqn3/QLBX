@@ -15,6 +15,7 @@ namespace QLBX
         public Main()
         {
             InitializeComponent();
+  
         }
 
         private void button4_Click(object sender, EventArgs e)
