@@ -17,20 +17,32 @@ namespace QLBX.GUI
         public frmDangNhap()
         {
             InitializeComponent();
-            dangnhapBO = new DangNhapBO(); 
+            dangnhapBO = new DangNhapBO();
+            this.AcceptButton = btnDangnhap;
         }
 
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
-            DangNhap user = new DAO.DangNhap();
+            DangNhap user = new DangNhap();
             user.TaiKhoan = txtTaiKhoan.Text;
             user.MatKhau = txtMatKhau.Text;
             bool b = dangnhapBO.DangNhap(user);
             if (b)
             {
-                frmMain 
-            }    
-
+                frmMain frm = new frmMain();
+                this.Visible = false;
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                if (dangnhapBO.Error != null)
+                {
+                    MessageBox.Show(dangnhapBO.Error.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show("Xảy ra lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

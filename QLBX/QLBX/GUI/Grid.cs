@@ -16,10 +16,81 @@ namespace QLBX.GUI
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public object Source
         {
+            get
+            {
+                return dgvData.DataSource;
+            }
 
+            set
+            {
+                dgvData.DataSource = null;
+                dgvData.Columns.Clear();
+                if (value != null)
+                {
+                    dgvData.DataSource = value;
+
+                }
+            }
+        }
+
+        public string ThongTinTimKiem
+        {
+            get
+            {
+                return txtSearch.Text;
+
+            }
+
+            set
+            {
+                txtSearch.Text = value;
+
+            }
+        }
+        private event EventHandler findClick;
+        public event EventHandler FindClick
+        {
+            add
+            {
+                findClick += value;
+            }
+            remove
+            {
+                findClick -= value;
+            }
+        }
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            findClick?.Invoke(sender, e);
+        }
+        public void Mapcolumn(string nameProperty, string caption)
+        {
+            dgvData.Columns[nameProperty].Name = caption;
+
+        }
+        public void VisibleColumn(string nameProperty, bool option)
+        {
+            dgvData.Columns[nameProperty].Visible = option;
+        }
+        public void AddColumn(string fieldName, string caption, bool visible)
+        { 
+           
+            DataGridViewColumn myCol = new DataGridViewColumn() { Name = caption, Visible = visible, DataPropertyName = fieldName };
+            dgvData.Columns.Add(myCol);
+        }
+        public void DeleteColumn(string fieldName)
+        {
+            dgvData.Columns.Remove(dgvData.Columns[fieldName]);
+        }
+        public Object GetValueRow()
+        {
+            return dgvData.CurrentRow.DataBoundItem;
+        }
+        public int GetIndexRow()
+        {
+            return dgvData.CurrentRow.Index;
         }
     }
 }

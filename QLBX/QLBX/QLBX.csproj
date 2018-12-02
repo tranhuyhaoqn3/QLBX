@@ -106,11 +106,23 @@
     <Compile Include="DAO\Xe.cs">
       <DependentUpon>QuanLyBenXe.tt</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmChuyenXe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChuyenXe.Designer.cs">
+      <DependentUpon>frmChuyenXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmIntroduce.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmIntroduce.Designer.cs">
+      <DependentUpon>frmIntroduce.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmMain.cs">
       <SubType>Form</SubType>
@@ -124,16 +136,31 @@
     <Compile Include="GUI\Grid.Designer.cs">
       <DependentUpon>Grid.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\taskcontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\taskcontrol.Designer.cs">
+      <DependentUpon>taskcontrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\frmChuyenXe.resx">
+      <DependentUpon>frmChuyenXe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmIntroduce.resx">
+      <DependentUpon>frmIntroduce.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Grid.resx">
       <DependentUpon>Grid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\taskcontrol.resx">
+      <DependentUpon>taskcontrol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -168,7 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAO\QuanLyBenXe.Context.tt">
@@ -181,6 +207,12 @@
       <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
       <LastGenOutput>QuanLyBenXe.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Eraser_20px.png" />
+    <None Include="Resources\Save_20px.png" />
+    <None Include="Resources\Delete_20px.png" />
+    <None Include="Resources\Edit_20px.png" />
+    <None Include="Resources\Plus_20px.png" />
+    <None Include="Resources\Plus_32px.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

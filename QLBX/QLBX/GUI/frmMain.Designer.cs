@@ -1,6 +1,6 @@
-﻿namespace QLBX
+﻿namespace QLBX.GUI
 {
-    partial class Main
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnLeft = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btinfo = new System.Windows.Forms.Button();
+            this.btchar = new System.Windows.Forms.Button();
+            this.btstation = new System.Windows.Forms.Button();
+            this.btcoach = new System.Windows.Forms.Button();
+            this.bttrip = new System.Windows.Forms.Button();
+            this.btacc = new System.Windows.Forms.Button();
             this.pnLogo = new System.Windows.Forms.Panel();
             this.pnTop = new System.Windows.Forms.Panel();
             this.pnMain = new System.Windows.Forms.Panel();
@@ -45,130 +45,127 @@
             // pnLeft
             // 
             this.pnLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
-            this.pnLeft.Controls.Add(this.button6);
-            this.pnLeft.Controls.Add(this.button5);
-            this.pnLeft.Controls.Add(this.button4);
-            this.pnLeft.Controls.Add(this.button3);
-            this.pnLeft.Controls.Add(this.button2);
-            this.pnLeft.Controls.Add(this.button1);
+            this.pnLeft.Controls.Add(this.btinfo);
+            this.pnLeft.Controls.Add(this.btchar);
+            this.pnLeft.Controls.Add(this.btstation);
+            this.pnLeft.Controls.Add(this.btcoach);
+            this.pnLeft.Controls.Add(this.bttrip);
+            this.pnLeft.Controls.Add(this.btacc);
             this.pnLeft.Controls.Add(this.pnLogo);
             this.pnLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnLeft.Location = new System.Drawing.Point(0, 0);
-            this.pnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(256, 681);
+            this.pnLeft.Size = new System.Drawing.Size(192, 553);
             this.pnLeft.TabIndex = 3;
             // 
-            // button6
+            // btinfo
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = global::QLBX.Properties.Resources.Info_32px;
-            this.button6.Location = new System.Drawing.Point(0, 602);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(256, 80);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Thông tin \r\nchương trình";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btinfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
+            this.btinfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btinfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btinfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btinfo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btinfo.ForeColor = System.Drawing.Color.White;
+            this.btinfo.Image = global::QLBX.Properties.Resources.Info_32px;
+            this.btinfo.Location = new System.Drawing.Point(0, 489);
+            this.btinfo.Name = "btinfo";
+            this.btinfo.Size = new System.Drawing.Size(192, 65);
+            this.btinfo.TabIndex = 10;
+            this.btinfo.Text = "Thông tin \r\nchương trình";
+            this.btinfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btinfo.UseVisualStyleBackColor = false;
+            this.btinfo.Click += new System.EventHandler(this.btinfo_Click);
             // 
-            // button5
+            // btchar
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::QLBX.Properties.Resources.Combo_Chart_32px;
-            this.button5.Location = new System.Drawing.Point(0, 522);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(256, 80);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Thống kê";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btchar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
+            this.btchar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btchar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btchar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btchar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btchar.ForeColor = System.Drawing.Color.White;
+            this.btchar.Image = global::QLBX.Properties.Resources.Combo_Chart_32px;
+            this.btchar.Location = new System.Drawing.Point(0, 424);
+            this.btchar.Name = "btchar";
+            this.btchar.Size = new System.Drawing.Size(192, 65);
+            this.btchar.TabIndex = 9;
+            this.btchar.Text = "Thống kê";
+            this.btchar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btchar.UseVisualStyleBackColor = false;
+            this.btchar.Click += new System.EventHandler(this.btchar_Click);
             // 
-            // button4
+            // btstation
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::QLBX.Properties.Resources._12718435381496695090bus_stop3___1_;
-            this.button4.Location = new System.Drawing.Point(0, 442);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(256, 80);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Bến xe";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btstation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
+            this.btstation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btstation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btstation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btstation.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btstation.ForeColor = System.Drawing.Color.White;
+            this.btstation.Image = global::QLBX.Properties.Resources._12718435381496695090bus_stop3___1_;
+            this.btstation.Location = new System.Drawing.Point(0, 359);
+            this.btstation.Name = "btstation";
+            this.btstation.Size = new System.Drawing.Size(192, 65);
+            this.btstation.TabIndex = 8;
+            this.btstation.Text = "Bến xe";
+            this.btstation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btstation.UseVisualStyleBackColor = false;
+            this.btstation.Click += new System.EventHandler(this.btstation_Click);
             // 
-            // button3
+            // btcoach
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::QLBX.Properties.Resources.Webp_net_resizeimage__1_;
-            this.button3.Location = new System.Drawing.Point(0, 362);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(256, 80);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Nhà xe";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btcoach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
+            this.btcoach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btcoach.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btcoach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcoach.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcoach.ForeColor = System.Drawing.Color.White;
+            this.btcoach.Image = global::QLBX.Properties.Resources.Webp_net_resizeimage__1_;
+            this.btcoach.Location = new System.Drawing.Point(0, 294);
+            this.btcoach.Name = "btcoach";
+            this.btcoach.Size = new System.Drawing.Size(192, 65);
+            this.btcoach.TabIndex = 7;
+            this.btcoach.Text = "Nhà xe";
+            this.btcoach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btcoach.UseVisualStyleBackColor = false;
+            this.btcoach.Click += new System.EventHandler(this.btcoach_Click);
             // 
-            // button2
+            // bttrip
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::QLBX.Properties.Resources.route_1288208__1_;
-            this.button2.Location = new System.Drawing.Point(0, 282);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(256, 80);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Chuyến xe";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.bttrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
+            this.bttrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bttrip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bttrip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttrip.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttrip.ForeColor = System.Drawing.Color.White;
+            this.bttrip.Image = global::QLBX.Properties.Resources.route_1288208__1_;
+            this.bttrip.Location = new System.Drawing.Point(0, 229);
+            this.bttrip.Name = "bttrip";
+            this.bttrip.Size = new System.Drawing.Size(192, 65);
+            this.bttrip.TabIndex = 6;
+            this.bttrip.Text = "Chuyến xe";
+            this.bttrip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bttrip.UseVisualStyleBackColor = false;
+            this.bttrip.Click += new System.EventHandler(this.bttrip_Click);
             // 
-            // button1
+            // btacc
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 202);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 80);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Admin";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btacc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
+            this.btacc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btacc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btacc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btacc.ForeColor = System.Drawing.Color.White;
+            this.btacc.Image = ((System.Drawing.Image)(resources.GetObject("btacc.Image")));
+            this.btacc.Location = new System.Drawing.Point(0, 164);
+            this.btacc.Name = "btacc";
+            this.btacc.Size = new System.Drawing.Size(192, 65);
+            this.btacc.TabIndex = 0;
+            this.btacc.Text = "Admin";
+            this.btacc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btacc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btacc.UseVisualStyleBackColor = false;
+            this.btacc.Click += new System.EventHandler(this.btacc_Click);
             // 
             // pnLogo
             // 
@@ -176,43 +173,41 @@
             this.pnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(256, 202);
+            this.pnLogo.Size = new System.Drawing.Size(192, 164);
             this.pnLogo.TabIndex = 5;
             // 
             // pnTop
             // 
             this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(256, 0);
-            this.pnTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnTop.Location = new System.Drawing.Point(192, 0);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(923, 55);
+            this.pnTop.Size = new System.Drawing.Size(692, 45);
             this.pnTop.TabIndex = 4;
             // 
             // pnMain
             // 
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Location = new System.Drawing.Point(256, 55);
-            this.pnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnMain.Location = new System.Drawing.Point(192, 45);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(923, 626);
+            this.pnMain.Size = new System.Drawing.Size(692, 508);
             this.pnMain.TabIndex = 5;
             // 
-            // Main
+            // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1179, 681);
+            this.ClientSize = new System.Drawing.Size(884, 553);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.pnLeft);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Main";
+            this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLBX";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -221,15 +216,15 @@
         #endregion
 
         private System.Windows.Forms.Panel pnLeft;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btacc;
         private System.Windows.Forms.Panel pnLogo;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Panel pnMain;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btinfo;
+        private System.Windows.Forms.Button btchar;
+        private System.Windows.Forms.Button btstation;
+        private System.Windows.Forms.Button btcoach;
+        private System.Windows.Forms.Button bttrip;
     }
 }
 
