@@ -38,6 +38,7 @@
             // btCan
             // 
             this.btCan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(227)))), ((int)(((byte)(233)))));
+            this.btCan.Enabled = false;
             this.btCan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCan.Image = global::QLBX.Properties.Resources.Delete_20px;
             this.btCan.Location = new System.Drawing.Point(327, 3);
@@ -52,6 +53,7 @@
             // btSave
             // 
             this.btSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(227)))), ((int)(((byte)(233)))));
+            this.btSave.Enabled = false;
             this.btSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSave.Image = global::QLBX.Properties.Resources.Save_20px;
             this.btSave.Location = new System.Drawing.Point(246, 3);
@@ -66,6 +68,7 @@
             // btEdit
             // 
             this.btEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(227)))), ((int)(((byte)(233)))));
+            this.btEdit.Enabled = false;
             this.btEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEdit.Image = global::QLBX.Properties.Resources.Edit_20px;
             this.btEdit.Location = new System.Drawing.Point(84, 4);
@@ -80,6 +83,7 @@
             // btDele
             // 
             this.btDele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(227)))), ((int)(((byte)(233)))));
+            this.btDele.Enabled = false;
             this.btDele.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDele.Image = global::QLBX.Properties.Resources.Eraser_20px;
             this.btDele.Location = new System.Drawing.Point(165, 3);

@@ -37,6 +37,9 @@ namespace QLBX.GUI
         {
             this.pnMain.Controls.Clear();
             btselec(sender);
+            frmNhaXe frm = new frmNhaXe();
+            this.pnMain.Controls.Add(frm);
+            frm.Show();
         }
 
         private void btstation_Click(object sender, EventArgs e)

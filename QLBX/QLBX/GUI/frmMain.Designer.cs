@@ -204,6 +204,7 @@
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.pnLeft);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLBX";

@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\DangNhapBO.cs" />
+    <Compile Include="BUS\NhaXeBO.cs" />
     <Compile Include="DAO\BenXeDi.cs">
       <DependentUpon>QuanLyBenXe.tt</DependentUpon>
     </Compile>
@@ -130,6 +131,12 @@
     <Compile Include="GUI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmNhaXe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNhaXe.Designer.cs">
+      <DependentUpon>frmNhaXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Grid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNhaXe.resx">
+      <DependentUpon>frmNhaXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Grid.resx">
       <DependentUpon>Grid.cs</DependentUpon>
@@ -207,6 +217,7 @@
       <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
       <LastGenOutput>QuanLyBenXe.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Car_32px.png" />
     <None Include="Resources\Eraser_20px.png" />
     <None Include="Resources\Save_20px.png" />
     <None Include="Resources\Delete_20px.png" />
