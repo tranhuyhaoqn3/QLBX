@@ -14,7 +14,7 @@
     </Key>
     <Property Name="IDBenXeVe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenBenXe" Type="nvarchar" MaxLength="100" />
-    <Property Name="DiaDiem" Type="nvarchar" MaxLength="100" />
+    <Property Name="DiaDiem" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="ChuyenXe">
     <Key>
@@ -193,6 +193,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="spdeleteBenXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDBenXe" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="QuanLyBenXeModelStoreContainer">
     <EntitySet Name="BenXeDi" EntityType="Self.BenXeDi" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BenXeVe" EntityType="Self.BenXeVe" Schema="dbo" store:Type="Tables" />

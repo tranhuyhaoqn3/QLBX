@@ -28,9 +28,7 @@ namespace QLBX.GUI
         {
             this.pnMain.Controls.Clear();
             btselec(sender);
-            frmChuyenXe frm = new frmChuyenXe();
-            this.pnMain.Controls.Add(frm);
-            frm.Show();
+       
         }
 
         private void btcoach_Click(object sender, EventArgs e)
@@ -43,6 +41,9 @@ namespace QLBX.GUI
         {
             this.pnMain.Controls.Clear();
             btselec(sender);
+            frmBenxee frm = new frmBenxee();
+            this.pnMain.Controls.Add(frm);
+            frm.Show();
         }
 
         private void btchar_Click(object sender, EventArgs e)
