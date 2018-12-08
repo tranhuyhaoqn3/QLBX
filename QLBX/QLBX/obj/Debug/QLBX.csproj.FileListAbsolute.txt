@@ -33,6 +33,7 @@ D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmMain.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmIntroduce.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmChuyenXe.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.taskcontrol.resources
+<<<<<<< HEAD
 C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\bin\Debug\QLBX.exe
 C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\bin\Debug\QLBX.pdb
 C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\bin\Debug\EntityFramework.dll
@@ -46,3 +47,7 @@ C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmMain.reso
 C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.taskcontrol.resources
 C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmBenxee.resources
 C:\Users\USER\Desktop\QLBX-master\QLBX\QLBX\QLBX\obj\Debug\QLBX.csprojResolveAssemblyReference.cache
+=======
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmNhaXe.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmXe.resources
+>>>>>>> Dev

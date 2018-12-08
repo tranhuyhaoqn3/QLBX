@@ -105,7 +105,11 @@
             this.dgvData.Margin = new System.Windows.Forms.Padding(4);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
+<<<<<<< HEAD
             this.dgvData.Size = new System.Drawing.Size(573, 302);
+=======
+            this.dgvData.Size = new System.Drawing.Size(430, 245);
+>>>>>>> Dev
             this.dgvData.TabIndex = 1;
             this.dgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellClick);
             // 

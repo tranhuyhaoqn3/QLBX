@@ -93,6 +93,16 @@ namespace QLBX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Car_32px {
+            get {
+                object obj = ResourceManager.GetObject("Car_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Combo_Chart_32px {
             get {
                 object obj = ResourceManager.GetObject("Combo Chart_32px", resourceCulture);

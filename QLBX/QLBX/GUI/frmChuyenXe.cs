@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLBX.DAO;
+using QLBX.BUS;
 
 namespace QLBX.GUI
 {
     public partial class frmChuyenXe : UserControl
     {
-        public frmChuyenXe()
-        {
-            InitializeComponent();
-        }
+
     }
 }
