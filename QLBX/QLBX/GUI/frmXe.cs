@@ -100,6 +100,7 @@ namespace QLBX.GUI
             };
             if (isAdd)
             {
+                xe.IDNhaXe = nhaxe.IDNhaXe;
                 var rs = xeBO.Add(xe);
                 if (rs == true)
                 {
@@ -196,8 +197,6 @@ namespace QLBX.GUI
             else
             {
                 rs = xeBO.GetAll(nhaxe);
-                MessageBox.Show(rs.Count.ToString());
-
             }
 
             if (rs != null && rs.Count > 0)
@@ -207,6 +206,11 @@ namespace QLBX.GUI
                 grid1.Mapcolumn("BienSoXe", "Biển số xe");
                 grid1.Mapcolumn("Loai", "Loại");
                 grid1.Mapcolumn("SoGhe", "Số ghế");
+
+                grid1.VisibleColumn("IDNhaXe", false);
+                grid1.VisibleColumn("Ghes", false);
+                grid1.VisibleColumn("NhaXe", false);
+                grid1.VisibleColumn("PhanCongs", false);
             }
         }
         private void Bind()
@@ -222,5 +226,6 @@ namespace QLBX.GUI
         {
             LoadAll();
         }
+
     }
 }

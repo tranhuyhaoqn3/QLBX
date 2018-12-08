@@ -34,27 +34,8 @@ namespace QLBX.GUI
                 }
             }
         }
-<<<<<<< HEAD
 
-
-=======
-        private event EventHandler cellclick;
-        public event EventHandler Cellclick
-        {
-            add
-            {
-                cellclick += value;
-            }
-            remove
-            {
-                cellclick -= value;
-            }
-        }
-        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            cellclick?.Invoke(sender, e);
-        }
->>>>>>> Dev
+      
         public string ThongTinTimKiem
         {
             get

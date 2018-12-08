@@ -62,7 +62,7 @@
             this.pnHead.Enabled = false;
             this.pnHead.Location = new System.Drawing.Point(0, 53);
             this.pnHead.Name = "pnHead";
-            this.pnHead.Size = new System.Drawing.Size(590, 95);
+            this.pnHead.Size = new System.Drawing.Size(590, 89);
             this.pnHead.TabIndex = 6;
             // 
             // txtSo
@@ -167,38 +167,37 @@
             // 
             this.pnBot.Controls.Add(this.taskcontrol1);
             this.pnBot.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBot.Location = new System.Drawing.Point(0, 274);
+            this.pnBot.Location = new System.Drawing.Point(0, 401);
             this.pnBot.Name = "pnBot";
-            this.pnBot.Size = new System.Drawing.Size(590, 69);
+            this.pnBot.Size = new System.Drawing.Size(590, 52);
             this.pnBot.TabIndex = 5;
             // 
             // taskcontrol1
             // 
             this.taskcontrol1.isSuccessFul = false;
-            this.taskcontrol1.Location = new System.Drawing.Point(40, 15);
+            this.taskcontrol1.Location = new System.Drawing.Point(22, 6);
             this.taskcontrol1.Name = "taskcontrol1";
             this.taskcontrol1.Size = new System.Drawing.Size(406, 41);
             this.taskcontrol1.TabIndex = 4;
             // 
             // grid1
             // 
-            this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.grid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid1.Location = new System.Drawing.Point(0, 0);
+            this.grid1.Location = new System.Drawing.Point(0, 142);
             this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(590, 274);
+            this.grid1.Size = new System.Drawing.Size(590, 259);
             this.grid1.Source = null;
-            this.grid1.TabIndex = 4;
+            this.grid1.TabIndex = 7;
             this.grid1.ThongTinTimKiem = "";
             // 
             // frmXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 343);
+            this.ClientSize = new System.Drawing.Size(590, 453);
+            this.Controls.Add(this.grid1);
             this.Controls.Add(this.pnHead);
             this.Controls.Add(this.pnTop);
-            this.Controls.Add(this.grid1);
             this.Controls.Add(this.pnBot);
             this.MaximizeBox = false;
             this.Name = "frmXe";
@@ -227,8 +226,8 @@
         private System.Windows.Forms.Label lbsoghe;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label lbXe;
-        private Grid grid1;
         private System.Windows.Forms.Panel pnBot;
         private taskcontrol taskcontrol1;
+        private Grid grid1;
     }
 }

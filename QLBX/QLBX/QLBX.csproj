@@ -62,58 +62,52 @@
     <Compile Include="BUS\NhaXeBO.cs" />
     <Compile Include="BUS\XeBO.cs" />
     <Compile Include="DAO\BenXeDi.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\BenXeVe.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\ChuyenXe.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\DangNhap.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Ghe.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\HoaDon.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\KhachHang.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\NhaXe.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\PhanCong.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\QuanLyBenXe.Context.cs">
+    <Compile Include="DAO\QuanLyBenxe.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBenXe.Context.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\QuanLyBenXe.cs">
+    <Compile Include="DAO\QuanLyBenxe.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\QuanLyBenXe.Designer.cs">
+    <Compile Include="DAO\QuanLyBenxe.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
+      <DependentUpon>QuanLyBenxe.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAO\sysdiagram.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Xe.cs">
-      <DependentUpon>QuanLyBenXe.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FrmBenXe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FrmBenXe.Designer.cs">
-      <DependentUpon>FrmBenXe.cs</DependentUpon>
+      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmBenxee.cs">
       <SubType>UserControl</SubType>
@@ -171,9 +165,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\FrmBenXe.resx">
-      <DependentUpon>FrmBenXe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmBenxee.resx">
       <DependentUpon>frmBenxee.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,12 +197,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DAO\QuanLyBenXe.edmx">
+    <EntityDeploy Include="DAO\QuanLyBenxe.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyBenXe.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLyBenxe.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAO\QuanLyBenXe.edmx.diagram">
-      <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
+    <None Include="DAO\QuanLyBenxe.edmx.diagram">
+      <DependentUpon>QuanLyBenxe.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -232,18 +223,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="DAO\QuanLyBenXe.Context.tt">
+    <Content Include="DAO\QuanLyBenxe.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
-      <LastGenOutput>QuanLyBenXe.Context.cs</LastGenOutput>
+      <DependentUpon>QuanLyBenxe.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBenxe.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DAO\QuanLyBenXe.tt">
+    <Content Include="DAO\QuanLyBenxe.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyBenXe.edmx</DependentUpon>
-      <LastGenOutput>QuanLyBenXe.cs</LastGenOutput>
+      <DependentUpon>QuanLyBenxe.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBenxe.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Car_32px.png" />
     <None Include="Resources\Eraser_20px.png" />
     <None Include="Resources\Save_20px.png" />

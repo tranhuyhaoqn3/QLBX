@@ -1,6 +1,7 @@
 ﻿using QLBX.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace QLBX.BUS
 {
     class XeBO
     {
-        QuanLyBenXeEntities dbs = new QuanLyBenXeEntities();
+        QuanLyBenXeEntities1 dbs = new QuanLyBenXeEntities1();
         private Exception error;
         public Exception Error
         {
@@ -27,7 +28,12 @@ namespace QLBX.BUS
         {
             try
             {
-                return dbs.Xes.SqlQuery("exec udsXebyIDnhaxe @IDnhaxe ", nhaxe.IDNhaXe).ToList<Xe>();
+                var idParam = new SqlParameter
+                {
+                    ParameterName = "IDnhaxe",
+                    Value = nhaxe.IDNhaXe
+                };
+                return dbs.Xes.SqlQuery("exec udsXebyIDnhaxe @IDnhaxe ", idParam).ToList<Xe>();
             }
             catch
             { 

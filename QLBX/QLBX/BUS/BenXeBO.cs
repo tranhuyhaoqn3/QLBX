@@ -10,14 +10,14 @@ namespace QLBX.BUS
 {
     class BenXeBO
     {
-        QuanLyBenXeEntities dbs;
-        //private Exception error;
+        QuanLyBenXeEntities1 dbs;
+        private Exception error;
         public BenXeBO()
         {
-            dbs = new QuanLyBenXeEntities();
+            dbs = new QuanLyBenXeEntities1();
         }
 
-        /*public Exception Error
+        public Exception Error
         {
             get
             {
@@ -28,7 +28,7 @@ namespace QLBX.BUS
             {
                 error = value;
             }
-        }*/
+        }
 
         public List<BenXeDi> benxe()
         {
@@ -40,7 +40,7 @@ namespace QLBX.BUS
         {
             try
             {
-                dbs.spdeleteBenXe(benXe.IDBenXeDi);
+               // dbs.spdeleteBenXe(benXe.IDBenXeDi);
             }
            catch(Exception ex)
             {

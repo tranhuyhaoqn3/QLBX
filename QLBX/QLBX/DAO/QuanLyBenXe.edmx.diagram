@@ -4,7 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="42a1f665b6e94bc4b9f0de7025c2139d" Name="Diagram1">
+      <Diagram DiagramId="6a0e370f3a0145fd99f7820c82c210ea" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyBenXeModel.BenXeDi" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBenXeModel.BenXeVe" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBenXeModel.ChuyenXe" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBenXeModel.DangNhap" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBenXeModel.Ghe" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
@@ -14,16 +16,14 @@
         <EntityTypeShape EntityType="QuanLyBenXeModel.PhanCong" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBenXeModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBenXeModel.Xe" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyBenXeModel.FK_ChuyenXe_BenXeDi" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBenXeModel.FK_ChuyenXe_BenXeVe" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBenXeModel.FK_PhanCong_ChuyenXe" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBenXeModel.FK_Ghe_HoaDon" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBenXeModel.FK_Ghe_Xe1" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBenXeModel.FK_HoaDon_KhachHang" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBenXeModel.FK_Xe_NhaXe" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBenXeModel.FK_PhanCong_Xe" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QuanLyBenXeModel.BenXeDi" Width="1.5" PointX="0.75" PointY="9.375" />
-        <EntityTypeShape EntityType="QuanLyBenXeModel.BenXeVe" Width="1.5" PointX="0.75" PointY="6.875" />
-        <AssociationConnector Association="QuanLyBenXeModel.FK_ChuyenXe_BenXeDi" />
-        <AssociationConnector Association="QuanLyBenXeModel.FK_ChuyenXe_BenXeVe" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

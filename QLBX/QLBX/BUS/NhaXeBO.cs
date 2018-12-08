@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QLBX.BUS
 {
     class NhaXeBO
     {
-        QuanLyBenXeEntities dbs = new QuanLyBenXeEntities();
+        QuanLyBenXeEntities1 dbs = new QuanLyBenXeEntities1();
         private Exception error;
         public Exception Error
         {
@@ -49,6 +50,7 @@ namespace QLBX.BUS
         {
             try
             {
+                
                 dbs.NhaXes.Add(nhaxe);
                 if (dbs.SaveChanges() <= 0)
                 {
@@ -56,8 +58,10 @@ namespace QLBX.BUS
                 }
                 return true;
             }
-            catch
+            catch(Exception ex)
+
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
 
@@ -78,6 +82,7 @@ namespace QLBX.BUS
             }
             catch
             {
+               
                 return false;
             }
 

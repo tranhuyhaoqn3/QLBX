@@ -25,9 +25,9 @@ namespace QLBX.DAO
         public Nullable<int> IDBenXeDi { get; set; }
         public Nullable<int> IDBenXeVe { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhanCong> PhanCongs { get; set; }
         public virtual BenXeDi BenXeDi { get; set; }
         public virtual BenXeVe BenXeVe { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhanCong> PhanCongs { get; set; }
     }
 }

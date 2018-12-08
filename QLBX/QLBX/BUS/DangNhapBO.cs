@@ -8,11 +8,11 @@ namespace QLBX.BUS
 {
     class DangNhapBO
     {
-        QuanLyBenXeEntities dbs = new QuanLyBenXeEntities();
+        QuanLyBenXeEntities1 dbs = new QuanLyBenXeEntities1();
         private Exception error;
         public DangNhapBO()
         {
-            dbs = new QuanLyBenXeEntities();
+            dbs = new QuanLyBenXeEntities1();
         }
 
         public Exception Error

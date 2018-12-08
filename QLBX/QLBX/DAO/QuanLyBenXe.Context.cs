@@ -12,13 +12,11 @@ namespace QLBX.DAO
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Linq;
     
-    public partial class QuanLyBenXeEntities : DbContext
+    public partial class QuanLyBenXeEntities1 : DbContext
     {
-        public QuanLyBenXeEntities()
-            : base("name=QuanLyBenXeEntities")
+        public QuanLyBenXeEntities1()
+            : base("name=QuanLyBenXeEntities1")
         {
         }
     
@@ -27,6 +25,8 @@ namespace QLBX.DAO
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<BenXeDi> BenXeDis { get; set; }
+        public virtual DbSet<BenXeVe> BenXeVes { get; set; }
         public virtual DbSet<ChuyenXe> ChuyenXes { get; set; }
         public virtual DbSet<DangNhap> DangNhaps { get; set; }
         public virtual DbSet<Ghe> Ghes { get; set; }
@@ -36,25 +36,5 @@ namespace QLBX.DAO
         public virtual DbSet<PhanCong> PhanCongs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Xe> Xes { get; set; }
-        public virtual DbSet<BenXeDi> BenXeDis { get; set; }
-        public virtual DbSet<BenXeVe> BenXeVes { get; set; }
-    
-        public virtual ObjectResult<string> spTrung(string diaDiem)
-        {
-            var diaDiemParameter = diaDiem != null ?
-                new ObjectParameter("DiaDiem", diaDiem) :
-                new ObjectParameter("DiaDiem", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("spTrung", diaDiemParameter);
-        }
-    
-        public virtual int spdeleteBenXe(Nullable<int> iDBenXe)
-        {
-            var iDBenXeParameter = iDBenXe.HasValue ?
-                new ObjectParameter("IDBenXe", iDBenXe) :
-                new ObjectParameter("IDBenXe", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spdeleteBenXe", iDBenXeParameter);
-        }
     }
 }
