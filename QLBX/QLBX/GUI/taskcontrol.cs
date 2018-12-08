@@ -142,6 +142,7 @@ namespace QLBX.GUI
                 btDele.Enabled = false;
                 btSave.Enabled = false;
             }
+
         }
 
         private void btCan_Click(object sender, EventArgs e)
