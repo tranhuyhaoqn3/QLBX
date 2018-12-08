@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyBenXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyBenXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BenXeDi">
           <Key>
             <PropertyRef Name="IDBenXeDi" />
@@ -19,7 +19,7 @@
           </Key>
           <Property Name="IDBenXeVe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenBenXe" Type="nvarchar" MaxLength="100" />
-          <Property Name="DiaDiem" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiaDiem" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="ChuyenXe">
           <Key>
@@ -198,6 +198,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="spdeleteBenXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDBenXe" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="QuanLyBenXeModelStoreContainer">
           <EntitySet Name="BenXeDi" EntityType="Self.BenXeDi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BenXeVe" EntityType="Self.BenXeVe" Schema="dbo" store:Type="Tables" />
@@ -243,29 +246,10 @@
             <End Role="Xe" EntitySet="Xe" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyBenXeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="BenXeDi">
-          <Key>
-            <PropertyRef Name="IDBenXeDi" />
-          </Key>
-          <Property Name="IDBenXeDi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenBenXe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DiaDiem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ChuyenXes" Relationship="Self.FK_ChuyenXe_BenXeDi" FromRole="BenXeDi" ToRole="ChuyenXe" />
-        </EntityType>
-        <EntityType Name="BenXeVe">
-          <Key>
-            <PropertyRef Name="IDBenXeVe" />
-          </Key>
-          <Property Name="IDBenXeVe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenBenXe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DiaDiem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ChuyenXes" Relationship="Self.FK_ChuyenXe_BenXeVe" FromRole="BenXeVe" ToRole="ChuyenXe" />
-        </EntityType>
         <EntityType Name="ChuyenXe">
           <Key>
             <PropertyRef Name="IDChuyen" />
@@ -274,9 +258,9 @@
           <Property Name="GiaVe" Type="Int32" />
           <Property Name="IDBenXeDi" Type="Int32" />
           <Property Name="IDBenXeVe" Type="Int32" />
-          <NavigationProperty Name="BenXeDi" Relationship="Self.FK_ChuyenXe_BenXeDi" FromRole="ChuyenXe" ToRole="BenXeDi" />
-          <NavigationProperty Name="BenXeVe" Relationship="Self.FK_ChuyenXe_BenXeVe" FromRole="ChuyenXe" ToRole="BenXeVe" />
           <NavigationProperty Name="PhanCongs" Relationship="Self.FK_PhanCong_ChuyenXe" FromRole="ChuyenXe" ToRole="PhanCong" />
+          <NavigationProperty Name="BenXeDi" Relationship="QuanLyBenXeModel.FK_ChuyenXe_BenXeDi" FromRole="ChuyenXe" ToRole="BenXeDi" />
+          <NavigationProperty Name="BenXeVe" Relationship="QuanLyBenXeModel.FK_ChuyenXe_BenXeVe" FromRole="ChuyenXe" ToRole="BenXeVe" />
         </EntityType>
         <EntityType Name="DangNhap">
           <Key>
@@ -361,30 +345,6 @@
           <NavigationProperty Name="NhaXe" Relationship="Self.FK_Xe_NhaXe" FromRole="Xe" ToRole="NhaXe" />
           <NavigationProperty Name="PhanCongs" Relationship="Self.FK_PhanCong_Xe" FromRole="Xe" ToRole="PhanCong" />
         </EntityType>
-        <Association Name="FK_ChuyenXe_BenXeDi">
-          <End Role="BenXeDi" Type="Self.BenXeDi" Multiplicity="0..1" />
-          <End Role="ChuyenXe" Type="Self.ChuyenXe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BenXeDi">
-              <PropertyRef Name="IDBenXeDi" />
-            </Principal>
-            <Dependent Role="ChuyenXe">
-              <PropertyRef Name="IDBenXeDi" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChuyenXe_BenXeVe">
-          <End Role="BenXeVe" Type="Self.BenXeVe" Multiplicity="0..1" />
-          <End Role="ChuyenXe" Type="Self.ChuyenXe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BenXeVe">
-              <PropertyRef Name="IDBenXeVe" />
-            </Principal>
-            <Dependent Role="ChuyenXe">
-              <PropertyRef Name="IDBenXeVe" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PhanCong_ChuyenXe">
           <End Role="ChuyenXe" Type="Self.ChuyenXe" Multiplicity="1" />
           <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
@@ -458,8 +418,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QuanLyBenXeEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BenXeDis" EntityType="Self.BenXeDi" />
-          <EntitySet Name="BenXeVes" EntityType="Self.BenXeVe" />
           <EntitySet Name="ChuyenXes" EntityType="Self.ChuyenXe" />
           <EntitySet Name="DangNhaps" EntityType="Self.DangNhap" />
           <EntitySet Name="Ghes" EntityType="Self.Ghe" />
@@ -469,14 +427,6 @@
           <EntitySet Name="PhanCongs" EntityType="Self.PhanCong" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Xes" EntityType="Self.Xe" />
-          <AssociationSet Name="FK_ChuyenXe_BenXeDi" Association="Self.FK_ChuyenXe_BenXeDi">
-            <End Role="BenXeDi" EntitySet="BenXeDis" />
-            <End Role="ChuyenXe" EntitySet="ChuyenXes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChuyenXe_BenXeVe" Association="Self.FK_ChuyenXe_BenXeVe">
-            <End Role="BenXeVe" EntitySet="BenXeVes" />
-            <End Role="ChuyenXe" EntitySet="ChuyenXes" />
-          </AssociationSet>
           <AssociationSet Name="FK_PhanCong_ChuyenXe" Association="Self.FK_PhanCong_ChuyenXe">
             <End Role="ChuyenXe" EntitySet="ChuyenXes" />
             <End Role="PhanCong" EntitySet="PhanCongs" />
@@ -501,31 +451,71 @@
             <End Role="Xe" EntitySet="Xes" />
             <End Role="PhanCong" EntitySet="PhanCongs" />
           </AssociationSet>
+          <FunctionImport Name="spTrung" ReturnType="Collection(String)">
+            <Parameter Name="DiaDiem" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spdeleteBenXe">
+          <Parameter Name="IDBenXe" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="BenXeDis" EntityType="QuanLyBenXeModel.BenXeDi" />
+          <EntitySet Name="BenXeVes" EntityType="QuanLyBenXeModel.BenXeVe" />
+          <AssociationSet Name="FK_ChuyenXe_BenXeDi" Association="QuanLyBenXeModel.FK_ChuyenXe_BenXeDi">
+            <End Role="BenXeDi" EntitySet="BenXeDis" />
+            <End Role="ChuyenXe" EntitySet="ChuyenXes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChuyenXe_BenXeVe" Association="QuanLyBenXeModel.FK_ChuyenXe_BenXeVe">
+            <End Role="BenXeVe" EntitySet="BenXeVes" />
+            <End Role="ChuyenXe" EntitySet="ChuyenXes" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="BenXeDi">
+          <Key>
+            <PropertyRef Name="IDBenXeDi" />
+          </Key>
+          <Property Name="IDBenXeDi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenBenXe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DiaDiem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChuyenXes" Relationship="QuanLyBenXeModel.FK_ChuyenXe_BenXeDi" FromRole="BenXeDi" ToRole="ChuyenXe" />
+        </EntityType>
+        <EntityType Name="BenXeVe">
+          <Key>
+            <PropertyRef Name="IDBenXeVe" />
+          </Key>
+          <Property Name="IDBenXeVe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenBenXe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DiaDiem" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="ChuyenXes" Relationship="QuanLyBenXeModel.FK_ChuyenXe_BenXeVe" FromRole="BenXeVe" ToRole="ChuyenXe" />
+        </EntityType>
+        <Association Name="FK_ChuyenXe_BenXeDi">
+          <End Type="QuanLyBenXeModel.BenXeDi" Role="BenXeDi" Multiplicity="0..1" />
+          <End Type="QuanLyBenXeModel.ChuyenXe" Role="ChuyenXe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BenXeDi">
+              <PropertyRef Name="IDBenXeDi" />
+            </Principal>
+            <Dependent Role="ChuyenXe">
+              <PropertyRef Name="IDBenXeDi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChuyenXe_BenXeVe">
+          <End Type="QuanLyBenXeModel.BenXeVe" Role="BenXeVe" Multiplicity="0..1" />
+          <End Type="QuanLyBenXeModel.ChuyenXe" Role="ChuyenXe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BenXeVe">
+              <PropertyRef Name="IDBenXeVe" />
+            </Principal>
+            <Dependent Role="ChuyenXe">
+              <PropertyRef Name="IDBenXeVe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QuanLyBenXeModelStoreContainer" CdmEntityContainer="QuanLyBenXeEntities">
-          <EntitySetMapping Name="BenXeDis">
-            <EntityTypeMapping TypeName="QuanLyBenXeModel.BenXeDi">
-              <MappingFragment StoreEntitySet="BenXeDi">
-                <ScalarProperty Name="IDBenXeDi" ColumnName="IDBenXeDi" />
-                <ScalarProperty Name="TenBenXe" ColumnName="TenBenXe" />
-                <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BenXeVes">
-            <EntityTypeMapping TypeName="QuanLyBenXeModel.BenXeVe">
-              <MappingFragment StoreEntitySet="BenXeVe">
-                <ScalarProperty Name="IDBenXeVe" ColumnName="IDBenXeVe" />
-                <ScalarProperty Name="TenBenXe" ColumnName="TenBenXe" />
-                <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ChuyenXes">
             <EntityTypeMapping TypeName="QuanLyBenXeModel.ChuyenXe">
               <MappingFragment StoreEntitySet="ChuyenXe">
@@ -612,6 +602,25 @@
                 <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
                 <ScalarProperty Name="BienSoXe" ColumnName="BienSoXe" />
                 <ScalarProperty Name="IDNhaXe" ColumnName="IDNhaXe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spdeleteBenXe" FunctionName="QuanLyBenXeModel.Store.spdeleteBenXe" />
+          <EntitySetMapping Name="BenXeDis">
+            <EntityTypeMapping TypeName="QuanLyBenXeModel.BenXeDi">
+              <MappingFragment StoreEntitySet="BenXeDi">
+                <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
+                <ScalarProperty Name="TenBenXe" ColumnName="TenBenXe" />
+                <ScalarProperty Name="IDBenXeDi" ColumnName="IDBenXeDi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BenXeVes">
+            <EntityTypeMapping TypeName="QuanLyBenXeModel.BenXeVe">
+              <MappingFragment StoreEntitySet="BenXeVe">
+                <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
+                <ScalarProperty Name="TenBenXe" ColumnName="TenBenXe" />
+                <ScalarProperty Name="IDBenXeVe" ColumnName="IDBenXeVe" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

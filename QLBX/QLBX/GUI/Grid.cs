@@ -35,6 +35,7 @@ namespace QLBX.GUI
             }
         }
 
+
         public string ThongTinTimKiem
         {
             get
@@ -48,6 +49,22 @@ namespace QLBX.GUI
                 txtSearch.Text = value;
 
             }
+        }
+        private event EventHandler cellclick;
+        public event EventHandler Cellclick
+        {
+            add
+            {
+                cellclick += value;
+            }
+            remove
+            {
+                cellclick -= value;
+            }
+        }
+        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cellclick?.Invoke(sender, e);
         }
         private event EventHandler findClick;
         public event EventHandler FindClick
@@ -67,7 +84,7 @@ namespace QLBX.GUI
         }
         public void Mapcolumn(string nameProperty, string caption)
         {
-            dgvData.Columns[nameProperty].Name = caption;
+            dgvData.Columns[nameProperty].HeaderText = caption;
 
         }
         public void VisibleColumn(string nameProperty, bool option)
@@ -92,5 +109,7 @@ namespace QLBX.GUI
         {
             return dgvData.CurrentRow.Index;
         }
+
+        
     }
 }
