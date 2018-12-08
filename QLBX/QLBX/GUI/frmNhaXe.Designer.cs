@@ -31,17 +31,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btAdd = new System.Windows.Forms.Button();
+            this.taskcontrol1 = new QLBX.GUI.taskcontrol();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.lbID = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.lbID = new System.Windows.Forms.Label();
             this.grid1 = new QLBX.GUI.Grid();
-            this.taskcontrol1 = new QLBX.GUI.taskcontrol();
+            this.btAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -79,20 +79,13 @@
             this.panel2.Size = new System.Drawing.Size(692, 69);
             this.panel2.TabIndex = 1;
             // 
-            // btAdd
+            // taskcontrol1
             // 
-            this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(227)))), ((int)(((byte)(233)))));
-            this.btAdd.Enabled = false;
-            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Image = global::QLBX.Properties.Resources.Car_32px;
-            this.btAdd.Location = new System.Drawing.Point(567, 10);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(87, 46);
-            this.btAdd.TabIndex = 5;
-            this.btAdd.Text = "Thêm xe";
-            this.btAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btAdd.UseVisualStyleBackColor = false;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            this.taskcontrol1.isSuccessFul = false;
+            this.taskcontrol1.Location = new System.Drawing.Point(40, 15);
+            this.taskcontrol1.Name = "taskcontrol1";
+            this.taskcontrol1.Size = new System.Drawing.Size(406, 41);
+            this.taskcontrol1.TabIndex = 4;
             // 
             // panel3
             // 
@@ -109,6 +102,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(692, 95);
             this.panel3.TabIndex = 2;
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(205, 3);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(273, 22);
+            this.txtID.TabIndex = 5;
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.ForeColor = System.Drawing.Color.Blue;
+            this.lbID.Location = new System.Drawing.Point(67, 11);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(54, 16);
+            this.lbID.TabIndex = 4;
+            this.lbID.Text = "Mã số:";
             // 
             // txtSDT
             // 
@@ -157,26 +170,6 @@
             this.panel4.Size = new System.Drawing.Size(692, 276);
             this.panel4.TabIndex = 3;
             // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(205, 3);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(273, 22);
-            this.txtID.TabIndex = 5;
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.ForeColor = System.Drawing.Color.Blue;
-            this.lbID.Location = new System.Drawing.Point(67, 11);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(54, 16);
-            this.lbID.TabIndex = 4;
-            this.lbID.Text = "Mã số:";
-            // 
             // grid1
             // 
             this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -188,13 +181,20 @@
             this.grid1.TabIndex = 0;
             this.grid1.ThongTinTimKiem = "";
             // 
-            // taskcontrol1
+            // btAdd
             // 
-            this.taskcontrol1.isSuccessFul = false;
-            this.taskcontrol1.Location = new System.Drawing.Point(40, 15);
-            this.taskcontrol1.Name = "taskcontrol1";
-            this.taskcontrol1.Size = new System.Drawing.Size(406, 41);
-            this.taskcontrol1.TabIndex = 4;
+            this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(227)))), ((int)(((byte)(233)))));
+            this.btAdd.Enabled = false;
+            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Image = global::QLBX.Properties.Resources.Car_32px;
+            this.btAdd.Location = new System.Drawing.Point(567, 10);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(87, 46);
+            this.btAdd.TabIndex = 5;
+            this.btAdd.Text = "Chi tiết\r\nnhà xe";
+            this.btAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // frmNhaXe
             // 

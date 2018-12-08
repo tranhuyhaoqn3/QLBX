@@ -1,23 +1,24 @@
-﻿using System;
+﻿using QLBX.BUS;
+using QLBX.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLBX.BUS;
-using QLBX.DAO;
 
 namespace QLBX.GUI
 {
-    public partial class frmNhaXe : UserControl
+    public partial class frmXe : Form
     {
-            private bool isAdd;
-            private bool isFind;
-            NhaXeBO nhaxeBO = new NhaXeBO();
-        public frmNhaXe()
+        private NhaXe nhaxe;
+        private bool isAdd;
+        private bool isFind;
+        XeBO xeBO = new XeBO();
+        public frmXe()
         {
             InitializeComponent();
             taskcontrol1.AddEvent += TaskControl1_AddEvent;
@@ -29,11 +30,23 @@ namespace QLBX.GUI
             grid1.Cellclick += Grid1_Cellclick;
         }
 
+        public NhaXe Nhaxe
+        {
+            get
+            {
+                return nhaxe;
+            }
+
+            set
+            {
+                nhaxe = value;
+                lbXe.Text += nhaxe.Ten;
+            }
+        }
         private void Grid1_Cellclick(object sender, EventArgs e)
         {
             taskcontrol1.IsRowClick = true;
-            panel3.Enabled = false;
-            btAdd.Enabled = true;
+            pnHead.Enabled = false;
             Bind();
         }
 
@@ -45,34 +58,33 @@ namespace QLBX.GUI
 
         private void TaskControl1_DeleteEvent(object sender, EventArgs e)
         {
-            
-            NhaXe nx = new NhaXe() { IDNhaXe = int.Parse(txtID.Text) };
-            var rs = nhaxeBO.Delete(nx);
+
+            Xe xe = new Xe() { IDXe = int.Parse(txtID.Text) };
+            var rs = xeBO.Delete(xe);
             if (rs == true)
             {
-                MessageBox.Show("Xóa nhà xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadAll();
             }
             else
             {
-                MessageBox.Show("Xóa nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             Clear();
-            btAdd.Enabled = false;
+       
         }
 
         private void TaskControl1_EditEvent(object sender, EventArgs e)
         {
-            panel3.Enabled = true;
-            txtName.Focus();
+            pnHead.Enabled = true;
+            txtLoai.Focus();
             isAdd = false;
-            btAdd.Enabled = false;
         }
 
         private void TaskControl1_CalcelEvent(object sender, EventArgs e)
         {
-            panel3.Enabled = false;
-            btAdd.Enabled = true;
+            pnHead.Enabled = false;
+
         }
 
         private void TaskControl1_SaveEvent(object sender, EventArgs e)
@@ -80,56 +92,55 @@ namespace QLBX.GUI
             isFind = false;
             if (!inputIsCorrect()) return;
             taskcontrol1.isSuccessFul = true;
-            var nhaxe = new NhaXe()
+            var xe = new Xe()
             {
-                Ten = txtName.Text,
-                SDT = txtSDT.Text,
+                Loai=txtLoai.Text,
+                BienSoXe=txtSo.Text,
+                SoGhe=int.Parse(txtsoghe.Text),
             };
             if (isAdd)
             {
-                var rs = nhaxeBO.Add(nhaxe);
+                var rs = xeBO.Add(xe);
                 if (rs == true)
                 {
-                    MessageBox.Show("Thêm nhà xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAll();
 
                 }
                 else
                 {
-                    MessageBox.Show("Thêm nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                nhaxe.IDNhaXe = int.Parse(txtID.Text);
-                var rs = nhaxeBO.Update(nhaxe);
+                 xe.IDXe= int.Parse(txtID.Text);
+                var rs = xeBO.Update(xe);
                 if (rs == false)
                 {
-                    MessageBox.Show("Sửa nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Sửa nhà xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAll();
 
                 }
             }
-            panel3.Enabled = false;
+            pnHead.Enabled = false;
             Clear();
-            btAdd.Enabled = false;
         }
 
         private void TaskControl1_AddEvent(object sender, EventArgs e)
         {
             isAdd = true;
             Clear();
-            panel3.Enabled = true;
-            txtName.Focus();
-            btAdd.Enabled = false;
+            pnHead.Enabled = true;
+            txtLoai.Focus();
         }
         private void Clear()
         {
-            foreach (var item in panel3.Controls)
+            foreach (var item in pnHead.Controls)
             {
                 if (item is TextBox)
                 {
@@ -151,18 +162,24 @@ namespace QLBX.GUI
         }
         private bool inputIsCorrect()
         {
-            if (string.IsNullOrEmpty(txtName.Text))
+            if (string.IsNullOrEmpty(txtSo.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên nhà xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtName.Focus();
+                MessageBox.Show("Vui lòng nhập biển số xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSo.Focus();
                 return false;
             }
-            if (txtSDT.Text != "")
+            if (string.IsNullOrEmpty(txtLoai.Text))
             {
-                if (!txtSDT.Text.All(char.IsDigit))
+                MessageBox.Show("Vui lòng nhập loại xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSo.Focus();
+                return false;
+            }
+            if (txtsoghe.Text != "")
+            {
+                if (!txtsoghe.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtSDT.Focus();
+                    MessageBox.Show("Số ghế không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtsoghe.Focus();
                     return false;
                 }
             }
@@ -171,49 +188,39 @@ namespace QLBX.GUI
         private void LoadAll()
         {
             grid1.Source = null;
-            var rs = new List<NhaXe>();
+            var rs = new List<Xe>();
             if (isFind)
             {
-                rs = nhaxeBO.FindByName(grid1.ThongTinTimKiem);
+                rs = xeBO.FindByName(grid1.ThongTinTimKiem);
             }
             else
             {
-                rs = nhaxeBO.GetAll();
+                rs = xeBO.GetAll(nhaxe);
+                MessageBox.Show(rs.Count.ToString());
+
             }
 
             if (rs != null && rs.Count > 0)
             {
                 grid1.Source = rs;
-                grid1.Mapcolumn("IDNhaXe", "ID");
-                grid1.Mapcolumn("Ten", "Tên nhà xe");
-                grid1.Mapcolumn("SDT", "Số điện thoại");
-                grid1.VisibleColumn("Xes", false);
+                grid1.Mapcolumn("IDXe", "ID");
+                grid1.Mapcolumn("BienSoXe", "Biển số xe");
+                grid1.Mapcolumn("Loai", "Loại");
+                grid1.Mapcolumn("SoGhe", "Số ghế");
             }
         }
         private void Bind()
         {
-            var nhaxe = grid1.GetValueRow() as NhaXe;
-            txtID.Text = nhaxe.IDNhaXe.ToString();
-            txtName.Text = nhaxe.Ten;
-            txtSDT.Text = nhaxe.SDT;
+            var xe = grid1.GetValueRow() as Xe;
+            txtID.Text = xe.IDXe.ToString();
+            txtSo.Text = xe.BienSoXe;
+            txtLoai.Text = xe.Loai;
+            txtsoghe.Text = xe.SoGhe.ToString();
         }
-        private void frmNhaXe_Load(object sender, EventArgs e)
+
+        private void frmXe_Load(object sender, EventArgs e)
         {
             LoadAll();
-        }
-
-
-        private void btAdd_Click(object sender, EventArgs e)
-        {
-            frmXe frm = new frmXe();
-            var nhaxe = new NhaXe()
-            {
-                IDNhaXe = int.Parse(txtID.Text),
-                Ten = txtName.Text,
-                SDT = txtSDT.Text,
-            };
-            frm.Nhaxe = nhaxe;
-            frm.ShowDialog();
         }
     }
 }

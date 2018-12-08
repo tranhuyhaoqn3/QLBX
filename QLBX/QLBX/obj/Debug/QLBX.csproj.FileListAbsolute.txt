@@ -36,3 +36,4 @@ D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmIntroduce.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmChuyenXe.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.taskcontrol.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmNhaXe.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmXe.resources
