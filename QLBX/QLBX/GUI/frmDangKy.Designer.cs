@@ -110,8 +110,9 @@
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "frmDangKy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng kí";
             this.ResumeLayout(false);
             this.PerformLayout();
