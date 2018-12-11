@@ -23,8 +23,7 @@ namespace QLBX.DAO
         public int IDHoaDon { get; set; }
         public Nullable<System.DateTime> NgayDat { get; set; }
         public Nullable<int> TongTien { get; set; }
-        public Nullable<int> IDKhachHang { get; set; }
-        public string IDNhanVien { get; set; }
+        public Nullable<int> IDKh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ghe> Ghes { get; set; }

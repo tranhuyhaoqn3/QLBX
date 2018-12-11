@@ -19,6 +19,7 @@ namespace QLBX.DAO
         public int TinhTrang { get; set; }
         public Nullable<int> IDXe { get; set; }
         public Nullable<int> IDHoaDon { get; set; }
+        public System.DateTime NgayKhoiHanh { get; set; }
     
         public virtual HoaDon HoaDon { get; set; }
         public virtual Xe Xe { get; set; }

@@ -72,7 +72,7 @@ namespace QLBX.GUI
         private void TaskControl1_CalcelEvent(object sender, EventArgs e)
         {
             panel3.Enabled = false;
-            btAdd.Enabled = true;
+            btAdd.Enabled = false;
         }
 
         private void TaskControl1_SaveEvent(object sender, EventArgs e)
@@ -188,6 +188,7 @@ namespace QLBX.GUI
                 grid1.Mapcolumn("Ten", "Tên nhà xe");
                 grid1.Mapcolumn("SDT", "Số điện thoại");
                 grid1.VisibleColumn("Xes", false);
+                grid1.columnwidth();
             }
         }
         private void Bind()

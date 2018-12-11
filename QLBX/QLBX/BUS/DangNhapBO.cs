@@ -8,11 +8,11 @@ namespace QLBX.BUS
 {
     class DangNhapBO
     {
-        QuanLyBenXeEntities1 dbs = new QuanLyBenXeEntities1();
+        QuanLyBenXeEntities dbs;
         private Exception error;
         public DangNhapBO()
         {
-            dbs = new QuanLyBenXeEntities1();
+            dbs = new QuanLyBenXeEntities();
         }
 
         public Exception Error
@@ -47,6 +47,19 @@ namespace QLBX.BUS
                 error = e;
             }
             return false;
+        }
+        public DangNhap QuenMatKhau(DangNhap user)
+        {
+            string kq;
+            try
+            {
+                var pr = dbs.DangNhaps.Single(p => p.TaiKhoan == user.TaiKhoan);
+                return pr;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

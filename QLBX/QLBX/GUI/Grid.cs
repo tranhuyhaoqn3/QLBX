@@ -110,6 +110,30 @@ namespace QLBX.GUI
             return dgvData.CurrentRow.Index;
         }
 
-        
+        public DataGridViewRow GetRow()
+        {
+            return dgvData.Rows[dgvData.CurrentRow.Index];
+        }
+        public void columnwidth()
+        {
+            if (dgvData.DataSource != null)
+            {
+                int count = 0;
+                for (int i = 0; i < dgvData.Columns.Count; i++)
+                {
+                    if (dgvData.Columns[i].Visible == true) count++;
+                }
+                int x = dgvData.Width / count;
+                for (int i = 0; i < dgvData.Columns.Count; i++)
+                {
+                    if (dgvData.Columns[i].Visible == true) dgvData.Columns[i].Width = x-15;
+                    else dgvData.Columns[i].Width = 0;
+                }
+            }
+        }
+        public void visiblefind()
+        {
+            pnTop.Visible = false;
+        }
     }
 }

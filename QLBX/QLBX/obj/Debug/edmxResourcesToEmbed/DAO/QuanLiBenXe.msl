@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanLyBenXeModelStoreContainer" CdmEntityContainer="QuanLyBenXeEntities">
+    <EntitySetMapping Name="BenXeDis">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.BenXeDi">
+        <MappingFragment StoreEntitySet="BenXeDi">
+          <ScalarProperty Name="IDBenXeDi" ColumnName="IDBenXeDi" />
+          <ScalarProperty Name="TenBenXe" ColumnName="TenBenXe" />
+          <ScalarProperty Name="DiaDiemDi" ColumnName="DiaDiemDi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BenXeVes">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.BenXeVe">
+        <MappingFragment StoreEntitySet="BenXeVe">
+          <ScalarProperty Name="IDBenXeVe" ColumnName="IDBenXeVe" />
+          <ScalarProperty Name="TenBenXe" ColumnName="TenBenXe" />
+          <ScalarProperty Name="DiaDiemVe" ColumnName="DiaDiemVe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChuyenXes">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.ChuyenXe">
+        <MappingFragment StoreEntitySet="ChuyenXe">
+          <ScalarProperty Name="IDChuyen" ColumnName="IDChuyen" />
+          <ScalarProperty Name="GiaVe" ColumnName="GiaVe" />
+          <ScalarProperty Name="IDBenXeDi" ColumnName="IDBenXeDi" />
+          <ScalarProperty Name="IDBenXeVe" ColumnName="IDBenXeVe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DangNhaps">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.DangNhap">
+        <MappingFragment StoreEntitySet="DangNhap">
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ghes">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.Ghe">
+        <MappingFragment StoreEntitySet="Ghe">
+          <ScalarProperty Name="IDGhe" ColumnName="IDGhe" />
+          <ScalarProperty Name="ViTri" ColumnName="ViTri" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="IDXe" ColumnName="IDXe" />
+          <ScalarProperty Name="IDHoaDon" ColumnName="IDHoaDon" />
+          <ScalarProperty Name="NgayKhoiHanh" ColumnName="NgayKhoiHanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="IDHoaDon" ColumnName="IDHoaDon" />
+          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="IDKh" ColumnName="IDKh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="IDKhachhang" ColumnName="IDKhachhang" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiXes">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.LoaiXe">
+        <MappingFragment StoreEntitySet="LoaiXe">
+          <ScalarProperty Name="IDLoai" ColumnName="IDLoai" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaXes">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.NhaXe">
+        <MappingFragment StoreEntitySet="NhaXe">
+          <ScalarProperty Name="IDNhaXe" ColumnName="IDNhaXe" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhanCongs">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.PhanCong">
+        <MappingFragment StoreEntitySet="PhanCong">
+          <ScalarProperty Name="NgayKhoiHanh" ColumnName="NgayKhoiHanh" />
+          <ScalarProperty Name="IDChuyen" ColumnName="IDChuyen" />
+          <ScalarProperty Name="IDXe" ColumnName="IDXe" />
+          <ScalarProperty Name="ThoiGianDen" ColumnName="ThoiGianDen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Xes">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.Xe">
+        <MappingFragment StoreEntitySet="Xe">
+          <ScalarProperty Name="IDXe" ColumnName="IDXe" />
+          <ScalarProperty Name="IDLoai" ColumnName="IDLoai" />
+          <ScalarProperty Name="BienSoXe" ColumnName="BienSoXe" />
+          <ScalarProperty Name="IDNhaXe" ColumnName="IDNhaXe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="deleteghe" FunctionName="QuanLyBenXeModel.Store.deleteghe" />
+    <FunctionImportMapping FunctionImportName="deletephancong" FunctionName="QuanLyBenXeModel.Store.deletephancong" />
+    <FunctionImportMapping FunctionImportName="editghe" FunctionName="QuanLyBenXeModel.Store.editghe" />
+    <FunctionImportMapping FunctionImportName="getchuyenxebyghe" FunctionName="QuanLyBenXeModel.Store.getchuyenxebyghe" />
+    <FunctionImportMapping FunctionImportName="getLotrinh" FunctionName="QuanLyBenXeModel.Store.getLotrinh">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.getLotrinh_Result">
+          <ScalarProperty Name="IDChuyen" ColumnName="IDChuyen" />
+          <ScalarProperty Name="LoTrinh" ColumnName="LoTrinh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getLotrinhSoghe" FunctionName="QuanLyBenXeModel.Store.getLotrinhSoghe">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.getLotrinhSoghe_Result">
+          <ScalarProperty Name="IDXe" ColumnName="IDXe" />
+          <ScalarProperty Name="LoTrinh" ColumnName="LoTrinh" />
+          <ScalarProperty Name="NgayKhoiHanh" ColumnName="NgayKhoiHanh" />
+          <ScalarProperty Name="SoGHe" ColumnName="SoGHe" />
+          <ScalarProperty Name="ThoiGianDen" ColumnName="ThoiGianDen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getlotrinhxe" FunctionName="QuanLyBenXeModel.Store.getlotrinhxe">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.getlotrinhxe_Result">
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="LoTrinh" ColumnName="LoTrinh" />
+          <ScalarProperty Name="NgayKhoiHanh" ColumnName="NgayKhoiHanh" />
+          <ScalarProperty Name="ThoiGianDen" ColumnName="ThoiGianDen" />
+          <ScalarProperty Name="GiaVe" ColumnName="GiaVe" />
+          <ScalarProperty Name="IDXe" ColumnName="IDXe" />
+          <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QuanLyBenXeModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QuanLyBenXeModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QuanLyBenXeModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QuanLyBenXeModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QuanLyBenXeModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLyBenXeModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLyBenXeModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="spChitiethoadon" FunctionName="QuanLyBenXeModel.Store.spChitiethoadon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.spChitiethoadon_Result">
+          <ScalarProperty Name="IDGhe" ColumnName="IDGhe" />
+          <ScalarProperty Name="ViTri" ColumnName="ViTri" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spchuyenxe1" FunctionName="QuanLyBenXeModel.Store.spchuyenxe1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.spchuyenxe1_Result">
+          <ScalarProperty Name="IDChuyen" ColumnName="IDChuyen" />
+          <ScalarProperty Name="GiaVe" ColumnName="GiaVe" />
+          <ScalarProperty Name="DiaDiemDi" ColumnName="DiaDiemDi" />
+          <ScalarProperty Name="DiaDiemVe" ColumnName="DiaDiemVe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spDemsoghedadat" FunctionName="QuanLyBenXeModel.Store.spDemsoghedadat" />
+    <FunctionImportMapping FunctionImportName="spHoaDon" FunctionName="QuanLyBenXeModel.Store.spHoaDon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.spHoaDon_Result">
+          <ScalarProperty Name="IDHoaDon" ColumnName="IDHoaDon" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="udsGetNhaXe" FunctionName="QuanLyBenXeModel.Store.udsGetNhaXe">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.udsGetNhaXe_Result">
+          <ScalarProperty Name="IDNhaXe" ColumnName="IDNhaXe" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="udsXebyIDnhaxe" FunctionName="QuanLyBenXeModel.Store.udsXebyIDnhaxe">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.udsXebyIDnhaxe_Result">
+          <ScalarProperty Name="IDXe" ColumnName="IDXe" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="BienSoXe" ColumnName="BienSoXe" />
+          <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="udsXebyIDnhaxeandLoai" FunctionName="QuanLyBenXeModel.Store.udsXebyIDnhaxeandLoai">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.udsXebyIDnhaxeandLoai_Result">
+          <ScalarProperty Name="IDXe" ColumnName="IDXe" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="BienSoXe" ColumnName="BienSoXe" />
+          <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="updatephancong" FunctionName="QuanLyBenXeModel.Store.updatephancong" />
+    <FunctionImportMapping FunctionImportName="spdeleteBenXe" FunctionName="QuanLyBenXeModel.Store.spdeleteBenXe" />
+  </EntityContainerMapping>
+</Mapping>

@@ -58,62 +58,111 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BenXeBO.cs" />
+    <Compile Include="BUS\ChiTietHoaDonBO.cs" />
+    <Compile Include="BUS\ChuyenXeBO.cs" />
     <Compile Include="BUS\DangNhapBO.cs" />
+    <Compile Include="BUS\GheBO.cs" />
+    <Compile Include="BUS\HoaDonBO.cs" />
+    <Compile Include="BUS\KhachHangBO.cs" />
+    <Compile Include="BUS\LoaiXeBO.cs" />
     <Compile Include="BUS\NhaXeBO.cs" />
+    <Compile Include="BUS\PhanCongBO.cs" />
     <Compile Include="BUS\XeBO.cs" />
     <Compile Include="DAO\BenXeDi.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\BenXeVe.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\ChuyenXe.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\DangNhap.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\getLotrinhSoghe_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\getlotrinhxe_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\getLotrinh_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Ghe.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\HoaDon.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\KhachHang.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\LoaiXe.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\NhaXe.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\PhanCong.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\QuanLyBenxe.Context.cs">
+    <Compile Include="DAO\QuanLiBenXe.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBenxe.Context.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\QuanLyBenxe.cs">
+    <Compile Include="DAO\QuanLiBenXe.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\QuanLyBenxe.Designer.cs">
+    <Compile Include="DAO\QuanLiBenXe.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBenxe.edmx</DependentUpon>
+      <DependentUpon>QuanLiBenXe.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\spChitiethoadon_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\spchuyenxe1_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\spHoaDon_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\sp_helpdiagrams_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\sysdiagram.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\udsGetNhaXe_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\udsXebyIDnhaxeandLoai_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\udsXebyIDnhaxe_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Xe.cs">
-      <DependentUpon>QuanLyBenxe.tt</DependentUpon>
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmBenxee.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\frmBenxee.Designer.cs">
       <DependentUpon>frmBenxee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChiTietHoaDon.Designer.cs">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmChuyenXe.cs">
       <SubType>UserControl</SubType>
@@ -126,6 +175,18 @@
     </Compile>
     <Compile Include="GUI\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDatVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDatVe.Designer.cs">
+      <DependentUpon>frmDatVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmIntroduce.cs">
       <SubType>UserControl</SubType>
@@ -144,6 +205,18 @@
     </Compile>
     <Compile Include="GUI\frmNhaXe.Designer.cs">
       <DependentUpon>frmNhaXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmPhanCong.Designer.cs">
+      <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTimMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTimMatKhau.Designer.cs">
+      <DependentUpon>frmTimMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmXe.cs">
       <SubType>Form</SubType>
@@ -168,11 +241,20 @@
     <EmbeddedResource Include="GUI\frmBenxee.resx">
       <DependentUpon>frmBenxee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmChiTietHoaDon.resx">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmChuyenXe.resx">
       <DependentUpon>frmChuyenXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDatVe.resx">
+      <DependentUpon>frmDatVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmIntroduce.resx">
       <DependentUpon>frmIntroduce.cs</DependentUpon>
@@ -182,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhaXe.resx">
       <DependentUpon>frmNhaXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmPhanCong.resx">
+      <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTimMatKhau.resx">
+      <DependentUpon>frmTimMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmXe.resx">
       <DependentUpon>frmXe.cs</DependentUpon>
@@ -197,12 +285,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DAO\QuanLyBenxe.edmx">
+    <EntityDeploy Include="DAO\QuanLiBenXe.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyBenxe.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLiBenXe.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAO\QuanLyBenxe.edmx.diagram">
-      <DependentUpon>QuanLyBenxe.edmx</DependentUpon>
+    <None Include="DAO\QuanLiBenXe.edmx.diagram">
+      <DependentUpon>QuanLiBenXe.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -224,18 +312,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAO\QuanLyBenxe.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyBenxe.edmx</DependentUpon>
-      <LastGenOutput>QuanLyBenxe.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAO\QuanLyBenxe.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyBenxe.edmx</DependentUpon>
-      <LastGenOutput>QuanLyBenxe.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Car_32px.png" />
     <None Include="Resources\Eraser_20px.png" />
     <None Include="Resources\Save_20px.png" />
@@ -246,6 +322,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_20px.png" />
+    <None Include="Resources\Train Ticket_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAO\QuanLiBenXe.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLiBenXe.edmx</DependentUpon>
+      <LastGenOutput>QuanLiBenXe.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAO\QuanLiBenXe.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLiBenXe.edmx</DependentUpon>
+      <LastGenOutput>QuanLiBenXe.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

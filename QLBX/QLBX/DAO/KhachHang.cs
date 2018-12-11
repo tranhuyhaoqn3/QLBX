@@ -20,9 +20,9 @@ namespace QLBX.DAO
             this.HoaDons = new HashSet<HoaDon>();
         }
     
-        public int IDKhachHang { get; set; }
-        public string SDT { get; set; }
+        public int IDKhachhang { get; set; }
         public string Ten { get; set; }
+        public Nullable<int> SDT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }

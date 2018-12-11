@@ -123,6 +123,16 @@ namespace QLBX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delete_32px {
+            get {
+                object obj = ResourceManager.GetObject("Delete_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Edit_20px {
             get {
                 object obj = ResourceManager.GetObject("Edit_20px", resourceCulture);
@@ -196,6 +206,26 @@ namespace QLBX.Properties {
         internal static System.Drawing.Bitmap Save_20px {
             get {
                 object obj = ResourceManager.GetObject("Save_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_20px {
+            get {
+                object obj = ResourceManager.GetObject("Search_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Train_Ticket_32px {
+            get {
+                object obj = ResourceManager.GetObject("Train Ticket_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

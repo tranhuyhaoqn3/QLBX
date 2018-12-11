@@ -28,21 +28,31 @@ namespace QLBX.GUI
             grid1.Cellclick += GridUS1_CellClick;
             LoadAll();
         }
+        BenXeDi dto1;
         private void GridUS1_CellClick(object sender, EventArgs e)
         {
-            BenXeDi dto = grid1.GetValueRow() as BenXeDi;
-            //MessageBox.Show(dto.TenBenXe); 
-            txtTenbenxe.Text = dto.TenBenXe;
-            txtDiadiem.Text = dto.DiaDiem;
+             dto1 = grid1.GetValueRow() as BenXeDi;
+            txtTenbenxe.Text = dto1.TenBenXe;
+            txtDiadiem.Text = dto1.DiaDiemDi;
 
             taskcontrol1.IsRowClick = true;
         }
         private void TaskControl1_DeleteEvent(object sender, EventArgs e)
         {
             BenXeBO benxeBO = new BenXeBO();
-            BenXeDi dto = grid1.GetValueRow() as BenXeDi;
-            benxeBO.Delete(dto);
-            MessageBox.Show("Xóa bến xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            var rs = benxeBO.Delete(dto1);
+            if (rs == true)
+            {
+
+                MessageBox.Show("Xóa bến xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAll();
+
+            }
+            else
+            {
+                MessageBox.Show("Xóa bến xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             LoadAll();
             Clear();
         }
@@ -71,7 +81,7 @@ namespace QLBX.GUI
             {
                 BenXeDi benxe = new BenXeDi();
                 benxe.TenBenXe = txtTenbenxe.Text;
-                benxe.DiaDiem = txtDiadiem.Text;
+                benxe.DiaDiemDi = txtDiadiem.Text;
                 BenXeBO benxeBO = new BenXeBO();
                 var rs=benxeBO.Insert(benxe);
                 if (rs == true)
@@ -89,7 +99,7 @@ namespace QLBX.GUI
             { 
                 BenXeDi dto = grid1.GetValueRow() as BenXeDi;
                 dto.TenBenXe = txtTenbenxe.Text;
-                dto.DiaDiem = txtDiadiem.Text;
+                dto.DiaDiemDi = txtDiadiem.Text;
                 BenXeBO benxeBO = new BenXeBO();
                 var rs=benxeBO.Update(dto);
                 if (rs == false)
@@ -127,6 +137,8 @@ namespace QLBX.GUI
             grid1.Mapcolumn("TenBenXe", "Tên bến xe");
             grid1.Mapcolumn("DiaDiem", "Địa điểm");
             grid1.VisibleColumn("ChuyenXes", false);
+            grid1.columnwidth();
+
         }
         private void LoadAll()
         {
@@ -134,8 +146,10 @@ namespace QLBX.GUI
             grid1.Source = benxeBO.benxe();
             grid1.Mapcolumn("IDBenXeDi","ID bến xe");
             grid1.Mapcolumn("TenBenXe", "Tên bến xe");
-            grid1.Mapcolumn("DiaDiem", "Địa điểm");
+            grid1.Mapcolumn("DiaDiemDi", "Địa điểm");
             grid1.VisibleColumn("ChuyenXes",false);
+            grid1.columnwidth();
+
             panel1.Enabled = false;
         }
         private bool inputIsCorrect()

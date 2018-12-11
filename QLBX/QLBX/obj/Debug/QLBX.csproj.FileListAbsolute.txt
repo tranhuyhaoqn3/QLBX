@@ -19,3 +19,8 @@ D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.Properties.Resources.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.csproj.GenerateResource.Cache
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.exe
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.pdb
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmTimMatKhau.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmDatVe.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmPhanCong.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmChiTietHoaDon.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmHoaDon.resources

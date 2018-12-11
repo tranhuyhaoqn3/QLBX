@@ -10,11 +10,11 @@ namespace QLBX.BUS
 {
     class BenXeBO
     {
-        QuanLyBenXeEntities1 dbs;
+        QuanLyBenXeEntities dbs;
         private Exception error;
         public BenXeBO()
         {
-            dbs = new QuanLyBenXeEntities1();
+            dbs = new QuanLyBenXeEntities();
         }
 
         public Exception Error
@@ -33,18 +33,34 @@ namespace QLBX.BUS
         public List<BenXeDi> benxe()
         {
             return dbs.BenXeDis.ToList<BenXeDi>();
-           
-
         }
-        public void Delete(BenXeDi benXe)
+        public List<BenXeVe> benxeve()
+        {
+            return dbs.BenXeVes.ToList<BenXeVe>();
+        }
+        public bool Delete(BenXeDi benXe)
         {
             try
             {
-               // dbs.spdeleteBenXe(benXe.IDBenXeDi);
+                var p = dbs.ChuyenXes.ToList();
+                foreach (var pr in p)
+                {
+                    if (pr.IDBenXeDi == benXe.IDBenXeDi || pr.IDBenXeVe == benXe.IDBenXeDi)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        dbs.spdeleteBenXe(benXe.IDBenXeDi);
+                        return true;
+                    }
+                }
+                return false;
+                //dbs.spdeleteBenXe(benXe.IDBenXeDi);
             }
-           catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Không thể kết nối với Sever!!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
 
         }
@@ -54,12 +70,12 @@ namespace QLBX.BUS
             {
                 var bxd = dbs.BenXeDis.Single(p => p.IDBenXeDi == benxe.IDBenXeDi);
                 bxd.TenBenXe = benxe.TenBenXe;
-                bxd.DiaDiem = benxe.DiaDiem;
+                bxd.DiaDiemDi = benxe.DiaDiemDi;
                 var bxv = dbs.BenXeVes.Single(p => p.IDBenXeVe == benxe.IDBenXeDi);
                 bxv.TenBenXe = benxe.TenBenXe;
-                bxv.DiaDiem = benxe.DiaDiem;
-                int kq=dbs.SaveChanges();
-                if ( kq<= 0)
+                bxv.DiaDiemVe = benxe.DiaDiemDi;
+                int kq = dbs.SaveChanges();
+                if (kq <= 0)
                 {
                     return false;
                 }
@@ -79,12 +95,12 @@ namespace QLBX.BUS
             try
             {
                 benxediDB.TenBenXe = benXe.TenBenXe;
-                benxediDB.DiaDiem = benXe.DiaDiem;
-                benxeveDB.TenBenXe= benXe.TenBenXe;
-                benxeveDB.DiaDiem = benXe.DiaDiem;
+                benxediDB.DiaDiemDi = benXe.DiaDiemDi;
+                benxeveDB.TenBenXe = benXe.TenBenXe;
+                benxeveDB.DiaDiemVe = benXe.DiaDiemDi;
                 dbs.BenXeDis.Add(benxediDB);
                 dbs.BenXeVes.Add(benxeveDB);
-                if(dbs.SaveChanges() <= 0)
+                if (dbs.SaveChanges() <= 0)
                 {
                     return false;
                 }
@@ -94,13 +110,13 @@ namespace QLBX.BUS
             {
                 return false;
             }
-          
+
         }
         public List<BenXeDi> timbenxe(string name)
         {
             List<BenXeDi> benxe = new List<BenXeDi>();
             var pr = from p in dbs.BenXeDis
-                     where p.DiaDiem.Contains(name)
+                     where p.DiaDiemDi.Contains(name)
                      select p;
             foreach (var p in pr)
             {
@@ -108,5 +124,30 @@ namespace QLBX.BUS
             }
             return benxe;
         }
+        public int mabenxedi(BenXeDi BenXeDi)
+        {
+            int ma = 0;
+            var pr = from p in dbs.BenXeDis
+                     where p.DiaDiemDi == BenXeDi.DiaDiemDi
+                     select p;
+            foreach (var p in pr)
+            {
+                ma = p.IDBenXeDi;
+            }
+            return ma;
+        }
+        public int mabenxeve(BenXeVe BenXeVe)
+        {
+            int ma = 0;
+            var pr = from p in dbs.BenXeVes
+                     where p.DiaDiemVe == BenXeVe.DiaDiemVe
+                     select p;
+            foreach (var p in pr)
+            {
+                ma = p.IDBenXeVe;
+            }
+            return ma;
+        }
+
     }
 }

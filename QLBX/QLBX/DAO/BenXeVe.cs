@@ -22,7 +22,7 @@ namespace QLBX.DAO
     
         public int IDBenXeVe { get; set; }
         public string TenBenXe { get; set; }
-        public string DiaDiem { get; set; }
+        public string DiaDiemVe { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChuyenXe> ChuyenXes { get; set; }

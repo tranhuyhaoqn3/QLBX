@@ -10,7 +10,7 @@ namespace QLBX.BUS
 {
     class NhaXeBO
     {
-        QuanLyBenXeEntities1 dbs = new QuanLyBenXeEntities1();
+        QuanLyBenXeEntities dbs = new QuanLyBenXeEntities();
         private Exception error;
         public Exception Error
         {
@@ -61,7 +61,7 @@ namespace QLBX.BUS
             catch(Exception ex)
 
             {
-                MessageBox.Show(ex.ToString());
+    
                 return false;
             }
 

@@ -41,8 +41,16 @@ namespace QLBX.GUI
                     MessageBox.Show(dangnhapBO.Error.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
-                    MessageBox.Show("Xảy ra lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmTimMatKhau frm = new frmTimMatKhau();
+            this.Visible = false;
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }

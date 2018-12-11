@@ -10,7 +10,7 @@ namespace QLBX.BUS
 {
     class XeBO
     {
-        QuanLyBenXeEntities1 dbs = new QuanLyBenXeEntities1();
+        QuanLyBenXeEntities dbs = new QuanLyBenXeEntities();
         private Exception error;
         public Exception Error
         {
@@ -24,30 +24,14 @@ namespace QLBX.BUS
                 error = value;
             }
         }
-        public List<Xe> GetAll(NhaXe nhaxe)
+        public List<object> GetAll(NhaXe nhaxe)
         {
             try
             {
-                var idParam = new SqlParameter
-                {
-                    ParameterName = "IDnhaxe",
-                    Value = nhaxe.IDNhaXe
-                };
-                return dbs.Xes.SqlQuery("exec udsXebyIDnhaxe @IDnhaxe ", idParam).ToList<Xe>();
+              return  dbs.udsXebyIDnhaxe(nhaxe.IDNhaXe).ToList<object>();
             }
             catch
             { 
-                return null;
-            }
-        }
-        public List<Xe> FindByName(string name)
-        {
-            try
-            {
-                return dbs.Xes.Where(item => item.BienSoXe.Contains(name)).ToList();
-            }
-            catch
-            {
                 return null;
             }
         }
@@ -73,9 +57,8 @@ namespace QLBX.BUS
             try
             {
                 var xe = dbs.Xes.Find(dto.IDXe);
-                xe.Loai = dto.Loai;
+                xe.IDLoai = dto.IDLoai;
                 xe.BienSoXe = dto.BienSoXe;
-                xe.SoGhe = dto.SoGhe;
                 if (dbs.SaveChanges() <= 0)
                 {
                     return false;
