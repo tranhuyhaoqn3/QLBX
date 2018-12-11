@@ -34,5 +34,22 @@ namespace QLBX.BUS
                 return null;
             }
         }
+        public bool Add(LoaiXe loai)
+        {
+            try
+            {
+                dbs.LoaiXes.Add(loai);
+                if (dbs.SaveChanges() > 0)
+                    return true;
+                else return false;
+            }
+            catch (Exception ex)
+
+            {
+
+                return false;
+            }
+
+        }
     }
 }

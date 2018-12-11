@@ -89,5 +89,14 @@ namespace QLBX.GUI
             this.pnMain.Controls.Add(frm);
             frm.Show();
         }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var rs = MessageBox.Show("Bạn có thật sự muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (rs != DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

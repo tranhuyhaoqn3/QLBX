@@ -26,3 +26,4 @@ D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmChiTietHoaDon.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmHoaDon.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmDangKy.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmThongTinChuongTrinh.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.StartProgram.resources
