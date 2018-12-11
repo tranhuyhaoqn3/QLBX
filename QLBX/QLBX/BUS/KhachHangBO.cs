@@ -34,7 +34,7 @@ namespace QLBX.BUS
                 }
                 return rs.IDKhachhang;
             }
-            catch
+            catch(Exception ex)
             {
                 return -1;
             }

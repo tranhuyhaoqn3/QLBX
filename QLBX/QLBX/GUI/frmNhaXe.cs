@@ -48,7 +48,7 @@ namespace QLBX.GUI
             
             NhaXe nx = new NhaXe() { IDNhaXe = int.Parse(txtID.Text) };
             var rs = nhaxeBO.Delete(nx);
-            if (rs == true)
+            if (rs >0)
             {
                 MessageBox.Show("Xóa nhà xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadAll();
@@ -83,12 +83,12 @@ namespace QLBX.GUI
             var nhaxe = new NhaXe()
             {
                 Ten = txtName.Text,
-                SDT = txtSDT.Text,
+                SDT =int.Parse(txtSDT.Text),
             };
             if (isAdd)
             {
                 var rs = nhaxeBO.Add(nhaxe);
-                if (rs == true)
+                if (rs >0)
                 {
                     MessageBox.Show("Thêm nhà xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAll();
@@ -196,7 +196,7 @@ namespace QLBX.GUI
             var nhaxe = grid1.GetValueRow() as NhaXe;
             txtID.Text = nhaxe.IDNhaXe.ToString();
             txtName.Text = nhaxe.Ten;
-            txtSDT.Text = nhaxe.SDT;
+            txtSDT.Text = nhaxe.SDT.ToString();
         }
         private void frmNhaXe_Load(object sender, EventArgs e)
         {
@@ -211,7 +211,7 @@ namespace QLBX.GUI
             {
                 IDNhaXe = int.Parse(txtID.Text),
                 Ten = txtName.Text,
-                SDT = txtSDT.Text,
+                SDT = int.Parse(txtSDT.Text),
             };
             frm.Nhaxe = nhaxe;
             frm.ShowDialog();

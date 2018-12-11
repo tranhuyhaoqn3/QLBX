@@ -27,6 +27,8 @@ namespace QLBX.GUI
         {
             ChiTietHoaDonBO chitiethoadonBO = new ChiTietHoaDonBO();
             grid1.Source = chitiethoadonBO.chitiethoadon(mahoadon);
+            grid1.columnwidth();
+            grid1.visiblefind();
         }
         public void tenXe(int mahoadon)
         {

@@ -46,23 +46,18 @@ namespace QLBX.BUS
                 return null;
             }
         }
-        public bool Add(NhaXe nhaxe)
+        public int Add(NhaXe nhaxe)
         {
             try
             {
-                
-                dbs.NhaXes.Add(nhaxe);
-                if (dbs.SaveChanges() <= 0)
-                {
-                    return false;
-                }
-                return true;
+
+                return dbs.insertnhaxe(nhaxe.Ten, nhaxe.SDT);
             }
             catch(Exception ex)
 
             {
     
-                return false;
+                return -1;
             }
 
         }
@@ -87,19 +82,16 @@ namespace QLBX.BUS
             }
 
         }
-        public bool Delete(NhaXe nx)
+        public int Delete(NhaXe nx)
         {
             try
             {
 
-                var nhaxe = dbs.NhaXes.Find(nx.IDNhaXe);
-                dbs.NhaXes.Remove(nhaxe);
-                if (dbs.SaveChanges() <= 0) return false;
-                return true;
+                return dbs.deletenhaxe(nx.IDNhaXe);
             }
             catch
             {
-                return false;
+                return -1;
             }
 
         }

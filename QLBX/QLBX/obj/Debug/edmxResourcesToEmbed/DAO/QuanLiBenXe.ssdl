@@ -57,7 +57,7 @@
       <PropertyRef Name="IDKhachhang" />
     </Key>
     <Property Name="IDKhachhang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Ten" Type="nchar" MaxLength="10" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
     <Property Name="SDT" Type="int" />
   </EntityType>
   <EntityType Name="LoaiXe">
@@ -74,7 +74,7 @@
     </Key>
     <Property Name="IDNhaXe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-    <Property Name="SDT" Type="nvarchar" MaxLength="100" />
+    <Property Name="SDT" Type="int" />
   </EntityType>
   <EntityType Name="PhanCong">
     <Key>
@@ -240,6 +240,9 @@
     <Parameter Name="IDXe" Type="int" Mode="In" />
     <Parameter Name="NgayKH" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="deletenhaxe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idnhaXe" Type="int" Mode="In" />
+  </Function>
   <Function Name="deletephancong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDXe" Type="int" Mode="In" />
     <Parameter Name="NgayKH" Type="nvarchar" Mode="In" />
@@ -249,6 +252,17 @@
     <Parameter Name="IDXe" Type="int" Mode="In" />
     <Parameter Name="NgayKH" Type="nvarchar" Mode="In" />
     <Parameter Name="NgayEdit" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="fcLayGhe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahoadon" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="IDGhe" Type="int" Nullable="false" />
+          <Property Name="ViTri" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
   </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="getchuyenxebyghe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -263,6 +277,15 @@
     <Parameter Name="IDDi" Type="int" Mode="In" />
     <Parameter Name="IDVe" Type="int" Mode="In" />
     <Parameter Name="NgayKH" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="insertchuyenxe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idBenDi" Type="int" Mode="In" />
+    <Parameter Name="idBenVe" Type="int" Mode="In" />
+    <Parameter Name="GiaVe" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertnhaxe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -298,6 +321,10 @@
     <Parameter Name="idhoadon" Type="int" Mode="In" />
   </Function>
   <Function Name="spchuyenxe1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spDangKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TaiKhoan" Type="nvarchar" Mode="In" />
+    <Parameter Name="MatKhau" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="spdeleteBenXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDBenXe" Type="int" Mode="In" />
   </Function>
@@ -305,6 +332,12 @@
     <Parameter Name="idhoadon" Type="int" Mode="In" />
   </Function>
   <Function Name="spHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spXoaChuyenXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idChuyenXe" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spXoaXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idXe" Type="int" Mode="In" />
+  </Function>
   <Function Name="udsGetNhaXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="udsXebyIDnhaxe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDNhaXe" Type="int" Mode="In" />

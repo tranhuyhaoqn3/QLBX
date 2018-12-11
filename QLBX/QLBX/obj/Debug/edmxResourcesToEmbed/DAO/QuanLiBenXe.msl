@@ -77,15 +77,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NhaXes">
-      <EntityTypeMapping TypeName="QuanLyBenXeModel.NhaXe">
-        <MappingFragment StoreEntitySet="NhaXe">
-          <ScalarProperty Name="IDNhaXe" ColumnName="IDNhaXe" />
-          <ScalarProperty Name="Ten" ColumnName="Ten" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PhanCongs">
       <EntityTypeMapping TypeName="QuanLyBenXeModel.PhanCong">
         <MappingFragment StoreEntitySet="PhanCong">
@@ -195,6 +186,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spdeleteBenXe" FunctionName="QuanLyBenXeModel.Store.spdeleteBenXe" />
     <FunctionImportMapping FunctionImportName="spDemsoghedadat" FunctionName="QuanLyBenXeModel.Store.spDemsoghedadat" />
     <FunctionImportMapping FunctionImportName="spHoaDon" FunctionName="QuanLyBenXeModel.Store.spHoaDon">
       <ResultMapping>
@@ -236,6 +228,28 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="updatephancong" FunctionName="QuanLyBenXeModel.Store.updatephancong" />
-    <FunctionImportMapping FunctionImportName="spdeleteBenXe" FunctionName="QuanLyBenXeModel.Store.spdeleteBenXe" />
+    <FunctionImportMapping FunctionImportName="spXoaChuyenXe" FunctionName="QuanLyBenXeModel.Store.spXoaChuyenXe" />
+    <FunctionImportMapping FunctionImportName="insertnhaxe" FunctionName="QuanLyBenXeModel.Store.insertnhaxe" />
+    <EntitySetMapping Name="NhaXes">
+      <EntityTypeMapping TypeName="QuanLyBenXeModel.NhaXe">
+        <MappingFragment StoreEntitySet="NhaXe">
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="IDNhaXe" ColumnName="IDNhaXe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="insertchuyenxe" FunctionName="QuanLyBenXeModel.Store.insertchuyenxe" />
+    <FunctionImportMapping FunctionImportName="spDangKy" FunctionName="QuanLyBenXeModel.Store.spDangKy" />
+    <FunctionImportMapping FunctionImportName="fcLayGhe" FunctionName="QuanLyBenXeModel.Store.fcLayGhe">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyBenXeModel.fcLayGhe_Result">
+          <ScalarProperty Name="IDGhe" ColumnName="IDGhe" />
+          <ScalarProperty Name="ViTri" ColumnName="ViTri" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="deletenhaxe" FunctionName="QuanLyBenXeModel.Store.deletenhaxe" />
+    <FunctionImportMapping FunctionImportName="spXoaXe" FunctionName="QuanLyBenXeModel.Store.spXoaXe" />
   </EntityContainerMapping>
 </Mapping>

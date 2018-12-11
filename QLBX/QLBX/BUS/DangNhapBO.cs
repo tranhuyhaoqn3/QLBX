@@ -61,5 +61,31 @@ namespace QLBX.BUS
                 return null;
             }
         }
+        public int SignUpDisplay(DangNhap signUp)
+        {
+            try
+            {
+               return dbs.spDangKy(signUp.TaiKhoan, signUp.MatKhau);
+
+            }
+            catch (Exception)
+            {
+
+                return -1;            }
+        }
+        public bool KiemTraTenDangNhap(DangNhap signUp)
+        {
+
+            int count = 0;
+            var pr = from p in dbs.DangNhaps
+                     where p.TaiKhoan == signUp.TaiKhoan
+                     select p;
+            count = pr.Count();
+            if (count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

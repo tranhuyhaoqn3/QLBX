@@ -79,10 +79,12 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.button1.Enabled = false;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkRed;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(553, 15);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";

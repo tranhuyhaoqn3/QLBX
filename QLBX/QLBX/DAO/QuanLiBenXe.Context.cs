@@ -35,10 +35,10 @@ namespace QLBX.DAO
         public virtual DbSet<HoaDon> HoaDons { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<LoaiXe> LoaiXes { get; set; }
-        public virtual DbSet<NhaXe> NhaXes { get; set; }
         public virtual DbSet<PhanCong> PhanCongs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Xe> Xes { get; set; }
+        public virtual DbSet<NhaXe> NhaXes { get; set; }
     
         public virtual int deleteghe(Nullable<int> iDXe, string ngayKH)
         {
@@ -248,6 +248,15 @@ namespace QLBX.DAO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spchuyenxe1_Result>("spchuyenxe1");
         }
     
+        public virtual int spdeleteBenXe(Nullable<int> iDBenXe)
+        {
+            var iDBenXeParameter = iDBenXe.HasValue ?
+                new ObjectParameter("IDBenXe", iDBenXe) :
+                new ObjectParameter("IDBenXe", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spdeleteBenXe", iDBenXeParameter);
+        }
+    
         public virtual ObjectResult<Nullable<int>> spDemsoghedadat(Nullable<int> idhoadon)
         {
             var idhoadonParameter = idhoadon.HasValue ?
@@ -318,13 +327,84 @@ namespace QLBX.DAO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updatephancong", iDXeParameter, ngayKHParameter, iDChuyenParameter, ngayKHedParameter, iDChuyenedParameter, thoiGianDenParameter);
         }
     
-        public virtual int spdeleteBenXe(Nullable<int> iDBenXe)
+        public virtual int spXoaChuyenXe(Nullable<int> idChuyenXe)
         {
-            var iDBenXeParameter = iDBenXe.HasValue ?
-                new ObjectParameter("IDBenXe", iDBenXe) :
-                new ObjectParameter("IDBenXe", typeof(int));
+            var idChuyenXeParameter = idChuyenXe.HasValue ?
+                new ObjectParameter("idChuyenXe", idChuyenXe) :
+                new ObjectParameter("idChuyenXe", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spdeleteBenXe", iDBenXeParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spXoaChuyenXe", idChuyenXeParameter);
+        }
+    
+        public virtual int insertnhaxe(string name, Nullable<int> sDT)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var sDTParameter = sDT.HasValue ?
+                new ObjectParameter("SDT", sDT) :
+                new ObjectParameter("SDT", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertnhaxe", nameParameter, sDTParameter);
+        }
+    
+        public virtual int insertchuyenxe(Nullable<int> idBenDi, Nullable<int> idBenVe, Nullable<int> giaVe)
+        {
+            var idBenDiParameter = idBenDi.HasValue ?
+                new ObjectParameter("idBenDi", idBenDi) :
+                new ObjectParameter("idBenDi", typeof(int));
+    
+            var idBenVeParameter = idBenVe.HasValue ?
+                new ObjectParameter("idBenVe", idBenVe) :
+                new ObjectParameter("idBenVe", typeof(int));
+    
+            var giaVeParameter = giaVe.HasValue ?
+                new ObjectParameter("GiaVe", giaVe) :
+                new ObjectParameter("GiaVe", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertchuyenxe", idBenDiParameter, idBenVeParameter, giaVeParameter);
+        }
+    
+        public virtual int spDangKy(string taiKhoan, string matKhau)
+        {
+            var taiKhoanParameter = taiKhoan != null ?
+                new ObjectParameter("TaiKhoan", taiKhoan) :
+                new ObjectParameter("TaiKhoan", typeof(string));
+    
+            var matKhauParameter = matKhau != null ?
+                new ObjectParameter("MatKhau", matKhau) :
+                new ObjectParameter("MatKhau", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDangKy", taiKhoanParameter, matKhauParameter);
+        }
+    
+        [DbFunction("QuanLyBenXeEntities", "fcLayGhe")]
+        public virtual IQueryable<fcLayGhe_Result> fcLayGhe(Nullable<int> mahoadon)
+        {
+            var mahoadonParameter = mahoadon.HasValue ?
+                new ObjectParameter("mahoadon", mahoadon) :
+                new ObjectParameter("mahoadon", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fcLayGhe_Result>("[QuanLyBenXeEntities].[fcLayGhe](@mahoadon)", mahoadonParameter);
+        }
+    
+        public virtual int deletenhaxe(Nullable<int> idnhaXe)
+        {
+            var idnhaXeParameter = idnhaXe.HasValue ?
+                new ObjectParameter("idnhaXe", idnhaXe) :
+                new ObjectParameter("idnhaXe", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("deletenhaxe", idnhaXeParameter);
+        }
+    
+        public virtual int spXoaXe(Nullable<int> idXe)
+        {
+            var idXeParameter = idXe.HasValue ?
+                new ObjectParameter("idXe", idXe) :
+                new ObjectParameter("idXe", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spXoaXe", idXeParameter);
         }
     }
 }

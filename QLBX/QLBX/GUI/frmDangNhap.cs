@@ -52,5 +52,13 @@ namespace QLBX.GUI
             frm.ShowDialog();
             this.Close();
         }
+
+        private void linkLabelDangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmDangKy frm = new frmDangKy();
+            this.Visible = false;
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }

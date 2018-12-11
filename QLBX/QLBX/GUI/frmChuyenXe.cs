@@ -36,6 +36,7 @@ namespace QLBX.GUI
         }
         private void LoadAll()
         {
+            grid1.visiblefind();
             panel1.Enabled = false;
 
             ChuyenXeBO chuyenxeBO = new ChuyenXeBO();
@@ -94,7 +95,7 @@ namespace QLBX.GUI
                 chuyenxe.GiaVe = int.Parse(txtGia.Text);
                 ChuyenXeBO chuyenxeBO = new ChuyenXeBO();
                 var rs = chuyenxeBO.Insert(chuyenxe);
-                if (rs == true)
+                if (rs >0)
                 {
                     MessageBox.Show("Thêm chuyến xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAll();
@@ -168,11 +169,8 @@ namespace QLBX.GUI
             ChuyenXeBO chuyenxeBO = new ChuyenXeBO();
             var ob = grid1.GetRow();
             chuyenxe.IDChuyen = int.Parse(ob.Cells["IDChuyen"].Value.ToString());
-            PhanCongBO phancongbo = new PhanCongBO();
-            if (phancongbo.checkidchuyen(chuyenxe.IDChuyen) == true) { MessageBox.Show("Xóa chuyến xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;   }
-            bool kq = chuyenxeBO.Delete(chuyenxe);
-            if (kq)
+            var kq = chuyenxeBO.Delete(chuyenxe);
+            if (kq>0)
             {
                 MessageBox.Show("Xóa chuyến xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadAll();

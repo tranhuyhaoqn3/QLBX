@@ -24,3 +24,5 @@ D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmDatVe.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmPhanCong.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmChiTietHoaDon.resources
 D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmHoaDon.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmDangKy.resources
+D:\AJ\HQTCSDL\QLBX\QLBX\QLBX\obj\Debug\QLBX.GUI.frmThongTinChuongTrinh.resources

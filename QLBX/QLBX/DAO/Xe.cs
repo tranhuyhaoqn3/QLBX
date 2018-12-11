@@ -29,8 +29,8 @@ namespace QLBX.DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ghe> Ghes { get; set; }
         public virtual LoaiXe LoaiXe { get; set; }
-        public virtual NhaXe NhaXe { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhanCong> PhanCongs { get; set; }
+        public virtual NhaXe NhaXe { get; set; }
     }
 }

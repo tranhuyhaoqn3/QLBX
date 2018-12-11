@@ -84,12 +84,12 @@
             this.btchar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btchar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btchar.ForeColor = System.Drawing.Color.White;
-            this.btchar.Image = global::QLBX.Properties.Resources.Delete_32px;
+            this.btchar.Image = global::QLBX.Properties.Resources.Combo_Chart_32px;
             this.btchar.Location = new System.Drawing.Point(0, 424);
             this.btchar.Name = "btchar";
             this.btchar.Size = new System.Drawing.Size(192, 65);
             this.btchar.TabIndex = 9;
-            this.btchar.Text = "Hủy vé";
+            this.btchar.Text = "Thống kê hóa đơn";
             this.btchar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btchar.UseVisualStyleBackColor = false;
             this.btchar.Click += new System.EventHandler(this.btchar_Click);

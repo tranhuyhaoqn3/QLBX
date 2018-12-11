@@ -122,8 +122,8 @@ namespace QLBX.GUI
         {
             luu = true;
             Clear();
-            txtTenbenxe.Focus();
             panel1.Enabled = true;
+            txtTenbenxe.Focus();
         }
 
         private void GridUS1_FindClick(object sender, EventArgs e)

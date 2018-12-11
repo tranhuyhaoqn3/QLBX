@@ -72,19 +72,16 @@ namespace QLBX.BUS
             }
 
         }
-        public bool Delete(Xe dto)
+        public int Delete(Xe dto)
         {
             try
             {
 
-                var xe = dbs.Xes.Find(dto.IDXe);
-                dbs.Xes.Remove(xe);
-                if (dbs.SaveChanges() <= 0) return false;
-                return true;
+                return dbs.spXoaXe(dto.IDXe);
             }
             catch
             {
-                return false;
+                return -1;
             }
 
         }

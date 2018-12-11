@@ -92,19 +92,6 @@ namespace QLBX.BUS
                 return null;
             }
         }
-        public bool checkidchuyen(int id)
-        {
-            try
-            {
-               var rs= dbs.PhanCongs.Where(p => p.IDChuyen == id).ToList();
-                if (rs.Count > 0) return true;
-                else return false;
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-        }
+       
     }
 }

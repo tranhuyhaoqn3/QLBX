@@ -56,7 +56,7 @@ namespace QLBX.GUI
 
             Xe xe = new Xe() { IDXe = int.Parse(txtID.Text) };
             var rs = xeBO.Delete(xe);
-            if (rs == true)
+            if (rs >0)
             {
                 MessageBox.Show("Xóa xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadAll();

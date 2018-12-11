@@ -80,6 +80,9 @@
     <Compile Include="DAO\DangNhap.cs">
       <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\fcLayGhe_Result.cs">
+      <DependentUpon>QuanLiBenXe.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\getLotrinhSoghe_Result.cs">
       <DependentUpon>QuanLiBenXe.tt</DependentUpon>
     </Compile>
@@ -170,6 +173,12 @@
     <Compile Include="GUI\frmChuyenXe.Designer.cs">
       <DependentUpon>frmChuyenXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDangKy.Designer.cs">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +221,12 @@
     <Compile Include="GUI\frmPhanCong.Designer.cs">
       <DependentUpon>frmPhanCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmThongTinChuongTrinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThongTinChuongTrinh.Designer.cs">
+      <DependentUpon>frmThongTinChuongTrinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmTimMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +262,9 @@
     <EmbeddedResource Include="GUI\frmChuyenXe.resx">
       <DependentUpon>frmChuyenXe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDangKy.resx">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmPhanCong.resx">
       <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThongTinChuongTrinh.resx">
+      <DependentUpon>frmThongTinChuongTrinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmTimMatKhau.resx">
       <DependentUpon>frmTimMatKhau.cs</DependentUpon>

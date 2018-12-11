@@ -22,6 +22,9 @@ namespace QLBX.GUI
         {
             this.pnMain.Controls.Clear();
             btselec(sender);
+            frmIntroduce frm = new frmIntroduce();
+            this.pnMain.Controls.Add(frm);
+            frm.Show();
         }
 
         private void bttrip_Click(object sender, EventArgs e)
@@ -66,6 +69,9 @@ namespace QLBX.GUI
         {
             this.pnMain.Controls.Clear();
             btselec(sender);
+            frmThongTinChuongTrinh frm = new frmThongTinChuongTrinh();
+            this.pnMain.Controls.Add(frm);
+            frm.Show();
         }
         private void btselec(object sender)
         {

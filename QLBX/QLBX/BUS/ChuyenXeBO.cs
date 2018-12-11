@@ -57,40 +57,30 @@ namespace QLBX.BUS
         //    }
         //    return benxe;
         //}
-        public bool Insert(ChuyenXe ChuyenXe)
+        public int Insert(ChuyenXe ChuyenXe)
         {
-            ChuyenXe ChuyenXeDTO = new ChuyenXe();
+          
             try
             {
-                ChuyenXeDTO.IDBenXeDi = ChuyenXe.IDBenXeDi;
-                ChuyenXeDTO.IDBenXeVe = ChuyenXe.IDBenXeVe;
-                ChuyenXeDTO.GiaVe = ChuyenXe.GiaVe;
-                dbs.ChuyenXes.Add(ChuyenXeDTO);
-                if (dbs.SaveChanges() <= 0)
-                {
-                    return false;
-                }
-                return true;
+                return dbs.insertchuyenxe(ChuyenXe.IDBenXeDi, ChuyenXe.IDBenXeVe, ChuyenXe.GiaVe);
             }
             catch (Exception ex)
             {
-                return false;
+                return -1;
             }
 
         }
-        public bool Delete(ChuyenXe ChuyenXe)
+        public int Delete(ChuyenXe ChuyenXe)
         {
             try
             {
-               
-                var n = dbs.ChuyenXes.Find(ChuyenXe.IDChuyen);
-                dbs.ChuyenXes.Remove(n);
-                dbs.SaveChanges();
-                return true;
+
+              return dbs.spXoaChuyenXe(ChuyenXe.IDChuyen);
+          
             }
             catch (Exception ex)
             {
-                return false;
+                return -1;
             }
         }
         public bool Update(ChuyenXe chuyenxeDTO)

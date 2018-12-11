@@ -62,7 +62,7 @@
             <PropertyRef Name="IDKhachhang" />
           </Key>
           <Property Name="IDKhachhang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Ten" Type="nchar" MaxLength="10" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="int" />
         </EntityType>
         <EntityType Name="LoaiXe">
@@ -79,7 +79,7 @@
           </Key>
           <Property Name="IDNhaXe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-          <Property Name="SDT" Type="nvarchar" MaxLength="100" />
+          <Property Name="SDT" Type="int" />
         </EntityType>
         <EntityType Name="PhanCong">
           <Key>
@@ -245,6 +245,9 @@
           <Parameter Name="IDXe" Type="int" Mode="In" />
           <Parameter Name="NgayKH" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="deletenhaxe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idnhaXe" Type="int" Mode="In" />
+        </Function>
         <Function Name="deletephancong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDXe" Type="int" Mode="In" />
           <Parameter Name="NgayKH" Type="nvarchar" Mode="In" />
@@ -254,6 +257,17 @@
           <Parameter Name="IDXe" Type="int" Mode="In" />
           <Parameter Name="NgayKH" Type="nvarchar" Mode="In" />
           <Parameter Name="NgayEdit" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="fcLayGhe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mahoadon" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="IDGhe" Type="int" Nullable="false" />
+                <Property Name="ViTri" Type="nvarchar" MaxLength="50" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="getchuyenxebyghe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -268,6 +282,15 @@
           <Parameter Name="IDDi" Type="int" Mode="In" />
           <Parameter Name="IDVe" Type="int" Mode="In" />
           <Parameter Name="NgayKH" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="insertchuyenxe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBenDi" Type="int" Mode="In" />
+          <Parameter Name="idBenVe" Type="int" Mode="In" />
+          <Parameter Name="GiaVe" Type="int" Mode="In" />
+        </Function>
+        <Function Name="insertnhaxe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="SDT" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -303,6 +326,10 @@
           <Parameter Name="idhoadon" Type="int" Mode="In" />
         </Function>
         <Function Name="spchuyenxe1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spDangKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TaiKhoan" Type="nvarchar" Mode="In" />
+          <Parameter Name="MatKhau" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="spdeleteBenXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDBenXe" Type="int" Mode="In" />
         </Function>
@@ -310,6 +337,12 @@
           <Parameter Name="idhoadon" Type="int" Mode="In" />
         </Function>
         <Function Name="spHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spXoaChuyenXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idChuyenXe" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spXoaXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idXe" Type="int" Mode="In" />
+        </Function>
         <Function Name="udsGetNhaXe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="udsXebyIDnhaxe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDNhaXe" Type="int" Mode="In" />
@@ -446,7 +479,7 @@
             <PropertyRef Name="IDKhachhang" />
           </Key>
           <Property Name="IDKhachhang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ten" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="Int32" />
           <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_KhachHang" FromRole="KhachHang" ToRole="HoaDon" />
         </EntityType>
@@ -458,15 +491,6 @@
           <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SoGhe" Type="Int32" />
           <NavigationProperty Name="Xes" Relationship="Self.FK_Xe_LoaiXe" FromRole="LoaiXe" ToRole="Xe" />
-        </EntityType>
-        <EntityType Name="NhaXe">
-          <Key>
-            <PropertyRef Name="IDNhaXe" />
-          </Key>
-          <Property Name="IDNhaXe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SDT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Xes" Relationship="Self.FK_Xe_NhaXe" FromRole="NhaXe" ToRole="Xe" />
         </EntityType>
         <EntityType Name="PhanCong">
           <Key>
@@ -501,8 +525,8 @@
           <Property Name="IDNhaXe" Type="Int32" />
           <NavigationProperty Name="Ghes" Relationship="Self.FK_Ghe_Xe1" FromRole="Xe" ToRole="Ghe" />
           <NavigationProperty Name="LoaiXe" Relationship="Self.FK_Xe_LoaiXe" FromRole="Xe" ToRole="LoaiXe" />
-          <NavigationProperty Name="NhaXe" Relationship="Self.FK_Xe_NhaXe" FromRole="Xe" ToRole="NhaXe" />
           <NavigationProperty Name="PhanCongs" Relationship="Self.FK_PhanCong_Xe" FromRole="Xe" ToRole="PhanCong" />
+          <NavigationProperty Name="NhaXe" Relationship="QuanLyBenXeModel.FK_Xe_NhaXe" FromRole="Xe" ToRole="NhaXe" />
         </EntityType>
         <Association Name="FK_ChuyenXe_BenXeDi">
           <End Role="BenXeDi" Type="Self.BenXeDi" Multiplicity="0..1">
@@ -602,20 +626,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Xe_NhaXe">
-          <End Role="NhaXe" Type="Self.NhaXe" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Xe" Type="Self.Xe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhaXe">
-              <PropertyRef Name="IDNhaXe" />
-            </Principal>
-            <Dependent Role="Xe">
-              <PropertyRef Name="IDNhaXe" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PhanCong_Xe">
           <End Role="Xe" Type="Self.Xe" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -639,7 +649,6 @@
           <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
           <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
           <EntitySet Name="LoaiXes" EntityType="Self.LoaiXe" />
-          <EntitySet Name="NhaXes" EntityType="Self.NhaXe" />
           <EntitySet Name="PhanCongs" EntityType="Self.PhanCong" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Xes" EntityType="Self.Xe" />
@@ -669,10 +678,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Xe_LoaiXe" Association="Self.FK_Xe_LoaiXe">
             <End Role="LoaiXe" EntitySet="LoaiXes" />
-            <End Role="Xe" EntitySet="Xes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Xe_NhaXe" Association="Self.FK_Xe_NhaXe">
-            <End Role="NhaXe" EntitySet="NhaXes" />
             <End Role="Xe" EntitySet="Xes" />
           </AssociationSet>
           <AssociationSet Name="FK_PhanCong_Xe" Association="Self.FK_PhanCong_Xe">
@@ -740,6 +745,9 @@
           <Parameter Name="idhoadon" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spchuyenxe1" ReturnType="Collection(QuanLyBenXeModel.spchuyenxe1_Result)" />
+          <FunctionImport Name="spdeleteBenXe">
+          <Parameter Name="IDBenXe" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="spDemsoghedadat" ReturnType="Collection(Int32)">
           <Parameter Name="idhoadon" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -760,8 +768,35 @@
             <Parameter Name="IDChuyened" Mode="In" Type="Int32" />
             <Parameter Name="ThoiGianDen" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="spdeleteBenXe">
-            <Parameter Name="IDBenXe" Mode="In" Type="Int32" />
+          <FunctionImport Name="spXoaChuyenXe">
+          <Parameter Name="idChuyenXe" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="insertnhaxe">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="SDT" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="NhaXes" EntityType="QuanLyBenXeModel.NhaXe" />
+          <AssociationSet Name="FK_Xe_NhaXe" Association="QuanLyBenXeModel.FK_Xe_NhaXe">
+            <End Role="NhaXe" EntitySet="NhaXes" />
+            <End Role="Xe" EntitySet="Xes" />
+          </AssociationSet>
+          <FunctionImport Name="insertchuyenxe">
+            <Parameter Name="idBenDi" Mode="In" Type="Int32" />
+            <Parameter Name="idBenVe" Mode="In" Type="Int32" />
+            <Parameter Name="GiaVe" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spDangKy">
+            <Parameter Name="TaiKhoan" Mode="In" Type="String" />
+            <Parameter Name="MatKhau" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="fcLayGhe" IsComposable="true" ReturnType="Collection(QuanLyBenXeModel.fcLayGhe_Result)">
+          <Parameter Name="mahoadon" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="deletenhaxe">
+          <Parameter Name="idnhaXe" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spXoaXe">
+          <Parameter Name="idXe" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getLotrinh_Result">
@@ -807,7 +842,7 @@
         </ComplexType>
         <ComplexType Name="spHoaDon_Result">
           <Property Type="Int32" Name="IDHoaDon" Nullable="false" />
-          <Property Type="String" Name="Ten" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Ten" Nullable="true" MaxLength="50" />
           <Property Type="DateTime" Name="NgayDat" Nullable="true" Precision="23" />
           <Property Type="Int32" Name="TongTien" Nullable="true" />
         </ComplexType>
@@ -827,6 +862,33 @@
           <Property Type="String" Name="Ten" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="BienSoXe" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="SoGhe" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="NhaXe">
+          <Key>
+            <PropertyRef Name="IDNhaXe" />
+          </Key>
+          <Property Name="IDNhaXe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="Int32" />
+          <NavigationProperty Name="Xes" Relationship="QuanLyBenXeModel.FK_Xe_NhaXe" FromRole="NhaXe" ToRole="Xe" />
+        </EntityType>
+        <Association Name="FK_Xe_NhaXe">
+          <End Type="QuanLyBenXeModel.NhaXe" Role="NhaXe" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="QuanLyBenXeModel.Xe" Role="Xe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaXe">
+              <PropertyRef Name="IDNhaXe" />
+            </Principal>
+            <Dependent Role="Xe">
+              <PropertyRef Name="IDNhaXe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="fcLayGhe_Result">
+          <Property Type="Int32" Name="IDGhe" Nullable="false" />
+          <Property Type="String" Name="ViTri" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -907,15 +969,6 @@
                 <ScalarProperty Name="IDLoai" ColumnName="IDLoai" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
                 <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NhaXes">
-            <EntityTypeMapping TypeName="QuanLyBenXeModel.NhaXe">
-              <MappingFragment StoreEntitySet="NhaXe">
-                <ScalarProperty Name="IDNhaXe" ColumnName="IDNhaXe" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="SDT" ColumnName="SDT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1028,6 +1081,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spdeleteBenXe" FunctionName="QuanLyBenXeModel.Store.spdeleteBenXe" />
           <FunctionImportMapping FunctionImportName="spDemsoghedadat" FunctionName="QuanLyBenXeModel.Store.spDemsoghedadat" />
           <FunctionImportMapping FunctionImportName="spHoaDon" FunctionName="QuanLyBenXeModel.Store.spHoaDon">
             <ResultMapping>
@@ -1069,7 +1123,29 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="updatephancong" FunctionName="QuanLyBenXeModel.Store.updatephancong" />
-          <FunctionImportMapping FunctionImportName="spdeleteBenXe" FunctionName="QuanLyBenXeModel.Store.spdeleteBenXe" />
+          <FunctionImportMapping FunctionImportName="spXoaChuyenXe" FunctionName="QuanLyBenXeModel.Store.spXoaChuyenXe" />
+          <FunctionImportMapping FunctionImportName="insertnhaxe" FunctionName="QuanLyBenXeModel.Store.insertnhaxe" />
+          <EntitySetMapping Name="NhaXes">
+            <EntityTypeMapping TypeName="QuanLyBenXeModel.NhaXe">
+              <MappingFragment StoreEntitySet="NhaXe">
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="IDNhaXe" ColumnName="IDNhaXe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="insertchuyenxe" FunctionName="QuanLyBenXeModel.Store.insertchuyenxe" />
+          <FunctionImportMapping FunctionImportName="spDangKy" FunctionName="QuanLyBenXeModel.Store.spDangKy" />
+          <FunctionImportMapping FunctionImportName="fcLayGhe" FunctionName="QuanLyBenXeModel.Store.fcLayGhe">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyBenXeModel.fcLayGhe_Result">
+                <ScalarProperty Name="IDGhe" ColumnName="IDGhe" />
+                <ScalarProperty Name="ViTri" ColumnName="ViTri" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="deletenhaxe" FunctionName="QuanLyBenXeModel.Store.deletenhaxe" />
+          <FunctionImportMapping FunctionImportName="spXoaXe" FunctionName="QuanLyBenXeModel.Store.spXoaXe" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtmNgay = new System.Windows.Forms.DateTimePicker();
             this.txtLoTrinh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenXe = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grid1 = new QLBX.GUI.Grid();
-            this.dtmNgay = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(567, 72);
             this.panel1.TabIndex = 12;
+            // 
+            // dtmNgay
+            // 
+            this.dtmNgay.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
+            this.dtmNgay.Enabled = false;
+            this.dtmNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtmNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgay.Location = new System.Drawing.Point(386, 4);
+            this.dtmNgay.Name = "dtmNgay";
+            this.dtmNgay.Size = new System.Drawing.Size(169, 22);
+            this.dtmNgay.TabIndex = 12;
             // 
             // txtLoTrinh
             // 
@@ -140,17 +151,6 @@
             this.grid1.TabIndex = 1;
             this.grid1.ThongTinTimKiem = "";
             // 
-            // dtmNgay
-            // 
-            this.dtmNgay.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
-            this.dtmNgay.Enabled = false;
-            this.dtmNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtmNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmNgay.Location = new System.Drawing.Point(386, 4);
-            this.dtmNgay.Name = "dtmNgay";
-            this.dtmNgay.Size = new System.Drawing.Size(169, 22);
-            this.dtmNgay.TabIndex = 12;
-            // 
             // frmChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,7 +159,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "frmChiTietHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết hóa đơn";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
