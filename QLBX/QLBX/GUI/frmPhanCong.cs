@@ -73,11 +73,11 @@ namespace QLBX.GUI
                     MessageBox.Show("Xóa phân công thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAll();
                 }
-                else MessageBox.Show("Xóa phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Xóa phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
              }
             else
             {
-                MessageBox.Show("Xóa phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             Clear();
         }
@@ -159,7 +159,7 @@ namespace QLBX.GUI
                 
                 else
                 {
-                    MessageBox.Show("Phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                     MessageBox.Show("Phân công thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -168,7 +168,7 @@ namespace QLBX.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -184,11 +184,11 @@ namespace QLBX.GUI
                     }
                     else
                     
-                        MessageBox.Show("Sửa phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Sửa phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
                     }
-                else MessageBox.Show("Sửa phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Sửa phân công không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             panel1.Enabled = false;
