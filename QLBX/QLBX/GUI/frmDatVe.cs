@@ -344,7 +344,7 @@ namespace QLBX.GUI
                             }
                         }
                     }
-                    MessageBox.Show("Đặt vé  thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Đặt vé  thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }

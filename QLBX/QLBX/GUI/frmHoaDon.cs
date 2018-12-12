@@ -42,7 +42,7 @@ namespace QLBX.GUI
             var ob = grid1.GetRow();
             mahoadon = int.Parse(ob.Cells["IDHoaDon"].Value.ToString());
             HoaDonBO hoadonBO = new HoaDonBO();
-            MessageBox.Show(mahoadon.ToString());
+   
             int kq = hoadonBO.sovedat(mahoadon);
             txtdat.Text = kq.ToString();
             button1.Enabled = true;

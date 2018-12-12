@@ -63,7 +63,7 @@ namespace QLBX.GUI
             }
             else
             {
-                MessageBox.Show("Xóa xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             Clear();
             btChuyen.Enabled = false;
@@ -107,7 +107,7 @@ namespace QLBX.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -116,7 +116,7 @@ namespace QLBX.GUI
                 var rs = xeBO.Update(xe);
                 if (rs == false)
                 {
-                    MessageBox.Show("Sửa xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

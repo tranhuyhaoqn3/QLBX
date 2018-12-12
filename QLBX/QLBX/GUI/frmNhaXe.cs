@@ -55,7 +55,7 @@ namespace QLBX.GUI
             }
             else
             {
-                MessageBox.Show("Xóa nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             Clear();
             btAdd.Enabled = false;
@@ -96,7 +96,7 @@ namespace QLBX.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -105,7 +105,7 @@ namespace QLBX.GUI
                 var rs = nhaxeBO.Update(nhaxe);
                 if (rs == false)
                 {
-                    MessageBox.Show("Sửa nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa nhà xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -161,7 +161,7 @@ namespace QLBX.GUI
             {
                 if (!txtSDT.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtSDT.Focus();
                     return false;
                 }

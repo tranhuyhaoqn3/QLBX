@@ -103,7 +103,7 @@ namespace QLBX.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm chuyến xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm chuyến xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -123,7 +123,7 @@ namespace QLBX.GUI
                 var rs = chuyenxeBO.Update(chuyenxe);
                 if (rs == false)
                 {
-                    MessageBox.Show("Sửa bến xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa bến xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -140,7 +140,7 @@ namespace QLBX.GUI
         {
                 if (string.IsNullOrEmpty(txtGia.Text)||!txtGia.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("Số tiền không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Số tiền không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtGia.Focus();
                     return false;
                 }
@@ -178,7 +178,7 @@ namespace QLBX.GUI
             }
             else
             {
-                MessageBox.Show("Xóa chuyến xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa chuyến xe không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
 
